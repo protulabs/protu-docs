@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  site: 'https://docs.protu.io',
   integrations: [
     starlight({
       title: 'Protu Documentation',
