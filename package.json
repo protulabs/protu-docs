@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/protulabs/protu-docs/issues"
   },
-  "homepage": "https://github.com/protulabs/protu-docs#readme"
+  "homepage": "https://github.com/protulabs/protu-docs#readme",
+  "dependencies": {
+    "@astrojs/starlight": "^0.37.6",
+    "astro": "^5.18.0",
+    "sharp": "^0.34.5"
+  }
 }
