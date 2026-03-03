@@ -1,0 +1,20 @@
+{
+  "name": "protu-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/protulabs/protu-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/protulabs/protu-docs/issues"
+  },
+  "homepage": "https://github.com/protulabs/protu-docs#readme"
+}
