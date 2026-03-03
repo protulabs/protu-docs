@@ -1,0 +1,72 @@
+/*
+  Protu Design System Tokens
+  Extracted from Protu app (resources/css/theme.css)
+  Used as reference for docs site theming
+*/
+
+:root {
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+
+  --protu-font-sans: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --protu-font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --protu-text-xs: 0.75rem;      /* 12px */
+  --protu-text-sm: 0.875rem;     /* 14px */
+  --protu-text-base: 1rem;       /* 16px */
+  --protu-text-lg: 1.125rem;     /* 18px */
+  --protu-text-xl: 1.25rem;      /* 20px */
+  --protu-text-2xl: 1.75rem;     /* 28px */
+
+  /* Line heights */
+  --protu-leading-tight: 1.25;
+  --protu-leading-normal: 1.5;
+  --protu-leading-relaxed: 1.6;
+
+  /* ==========================================================================
+     COLORS - Dark Theme
+     ========================================================================== */
+
+  /* Backgrounds */
+  --protu-bg-page: #0E1115;
+  --protu-bg-surface: #13161A;
+  --protu-bg-elevated: #20242B;
+  --protu-bg-component: #292E37;
+  --protu-bg-hover: #12161B;
+
+  /* Borders */
+  --protu-border-default: #292E37;
+  --protu-border-subtle: #22272F;
+  --protu-border-hover: #515E74;
+
+  /* Text */
+  --protu-text-primary: #F0F4FD;
+  --protu-text-body: #8491AC;
+  --protu-text-muted: #626D83;
+
+  /* Accent */
+  --protu-accent-primary: #3F80FF;
+  --protu-accent-teal: #45F0BD;
+  --protu-accent-error: #FD6F85;
+
+  /* ==========================================================================
+     SPACING (4px base)
+     ========================================================================== */
+
+  --protu-space-1: 0.25rem;   /* 4px */
+  --protu-space-2: 0.5rem;    /* 8px */
+  --protu-space-3: 0.75rem;   /* 12px */
+  --protu-space-4: 1rem;      /* 16px */
+  --protu-space-6: 1.5rem;    /* 24px */
+  --protu-space-8: 2rem;      /* 32px */
+
+  /* ==========================================================================
+     BORDER RADIUS
+     ========================================================================== */
+
+  --protu-radius-sm: 3px;
+  --protu-radius-md: 6px;
+  --protu-radius-lg: 10px;
+}

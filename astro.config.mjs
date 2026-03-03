@@ -5,15 +5,16 @@ export default defineConfig({
   site: 'https://docs.protu.io',
   integrations: [
     starlight({
-      title: 'Protu Documentation',
+      title: 'Protu Docs',
       description: 'Product documentation for Protu',
-      defaultLocale: 'en',
-      locales: {
-        en: { label: 'English' },
+      components: {
+        Header: './src/components/Header.astro',
       },
-      social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/protulabs/protu-docs' },
-      ],
+      defaultLocale: 'root',
+      locales: {
+        root: { label: 'English', lang: 'en' },
+      },
+      social: [],
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {

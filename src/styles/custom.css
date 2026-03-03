@@ -1,18 +1,616 @@
-/* Protu Documentation Custom Styles */
+/* Protu Documentation Theme */
+@import './protu-theme.css';
+
+/* ==========================================================================
+   STARLIGHT THEME OVERRIDES
+   Matches Protu docs design specifications
+   ========================================================================== */
 
 :root {
-  /* Dark theme as default */
-  --sl-color-accent-low: #1a365d;
-  --sl-color-accent: #3182ce;
-  --sl-color-accent-high: #63b3ed;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eeeef0;
-  --sl-color-gray-2: #c0c2c7;
-  --sl-color-gray-3: #888b96;
-  --sl-color-gray-4: #545861;
-  --sl-color-gray-5: #353841;
-  --sl-color-gray-6: #24272f;
-  --sl-color-black: #17181c;
+  /* Color palette - dark theme (Linear-inspired refinements) */
+  --sl-color-accent-low: #1a2a4a;
+  --sl-color-accent: #3F80FF;
+  --sl-color-accent-high: #6ba3ff;
+
+  /* 1. Softer text colors - less harsh white */
+  --sl-color-white: #E8E8EC;
+  --sl-color-gray-1: #D4D4D8;
+  /* 2. Lighter/more muted body text */
+  --sl-color-gray-2: #8A8F9E;
+  --sl-color-gray-3: #5C6370;
+  --sl-color-gray-4: #363940;
+  --sl-color-gray-5: #1C1E22;
+  --sl-color-gray-6: #141618;
+  --sl-color-black: #0B0E12;
+
+  /* Text colors */
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-accent);
+
+  /* Background - unified dark */
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-black);
+  --sl-color-bg-inline-code: #16181c;
+
+  /* 3. Subtler borders - almost invisible */
+  --sl-color-hairline: #18191B;
+  --sl-color-hairline-light: #1F2023;
+
+  /* Typography */
+  --sl-font: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Content width */
+  --sl-content-width: 48rem;
+  --sl-sidebar-width: 16rem;
 }
 
-/* Minimal customisation - keep Starlight defaults */
+/* ==========================================================================
+   FONT LOADING
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k.woff2') format('woff2');
+}
+
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+
+html {
+  background-color: var(--sl-color-black);
+}
+
+body {
+  font-family: var(--sl-font);
+  color: var(--sl-color-text);
+  /* 4. Generous line-height for readability */
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - Per design spec
+   ========================================================================== */
+
+/* Page title: 34px, weight 500, no divider */
+h1 {
+  font-family: var(--sl-font);
+  font-size: 2.125rem; /* 34px */
+  font-weight: 500;
+  color: var(--sl-color-white);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Content headings: 22px, weight 500 */
+h2 {
+  font-family: var(--sl-font);
+  font-size: 1.375rem; /* 22px */
+  font-weight: 500;
+  color: var(--sl-color-white);
+  line-height: 1.4;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+h3 {
+  font-family: var(--sl-font);
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 500;
+  color: var(--sl-color-white);
+  line-height: 1.4;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h4, h5, h6 {
+  font-family: var(--sl-font);
+  font-weight: 500;
+  color: var(--sl-color-white);
+  line-height: 1.4;
+}
+
+/* Page description: 16px, muted */
+.sl-markdown-content > p:first-of-type {
+  font-size: 1rem; /* 16px */
+  color: var(--sl-color-gray-2);
+  line-height: 1.75;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Body text */
+p, li {
+  color: var(--sl-color-gray-2);
+  line-height: 1.75;
+  font-size: 0.9375rem; /* 15px */
+}
+
+/* Strong text */
+strong {
+  color: var(--sl-color-white);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+
+a {
+  color: var(--sl-color-gray-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(147, 159, 173, 0.4);
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--sl-color-white);
+  text-decoration-color: rgba(239, 243, 244, 0.4);
+}
+
+/* Sidebar and nav links - no underline */
+nav a,
+.sidebar a,
+starlight-toc a {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+header.header {
+  background-color: var(--sl-color-black);
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+/* Site title styling */
+.site-title {
+  font-weight: 400;
+  color: var(--sl-color-white);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+
+/* ==========================================================================
+   SIDEBAR - Clean, no dividers
+   ========================================================================== */
+
+nav.sidebar,
+.sidebar,
+.sidebar-pane,
+[data-sl-sidebar],
+.sl-sidebar {
+  background-color: var(--sl-color-black);
+  border: none !important;
+  border-right: none !important;
+}
+
+/* Kill ALL sidebar borders aggressively */
+.sidebar-pane::before,
+.sidebar-pane::after,
+nav.sidebar::before,
+nav.sidebar::after {
+  display: none !important;
+}
+
+/* Remove content area borders */
+.main-frame,
+main,
+.content-panel {
+  border: none !important;
+}
+
+/* Sidebar section headers: 14px, weight 500 */
+.sidebar-group > summary,
+[data-sl-sidebar-group] > summary,
+.top-level > summary {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--sl-color-white);
+  letter-spacing: 0;
+}
+
+/* Sidebar links */
+nav.sidebar a {
+  color: var(--sl-color-gray-2);
+  font-size: 0.875rem; /* 14px */
+  padding: 0.375rem 0;
+  border-radius: 0;
+  transition: color 0.15s ease;
+}
+
+nav.sidebar a:hover {
+  color: var(--sl-color-white);
+  background-color: transparent;
+}
+
+/* Active sidebar link */
+nav.sidebar a[aria-current="page"],
+nav.sidebar a[data-current="true"] {
+  color: var(--sl-color-white);
+  background-color: transparent;
+  font-weight: 400;
+}
+
+/* Chevron indicators */
+.sidebar-group summary::marker,
+[data-sl-sidebar-group] summary::marker {
+  color: var(--sl-color-gray-3);
+}
+
+/* ==========================================================================
+   TABLE OF CONTENTS (Right sidebar) - Clean, no dividers
+   ========================================================================== */
+
+.right-sidebar-panel,
+.right-sidebar,
+[data-sl-right-sidebar],
+starlight-toc {
+  border: none !important;
+  border-left: none !important;
+}
+
+starlight-toc a {
+  color: var(--sl-color-gray-3);
+  font-size: 0.8125rem;
+  transition: color 0.15s ease;
+  padding-left: 0;
+  border: none !important;
+}
+
+starlight-toc a:hover {
+  color: var(--sl-color-white);
+}
+
+starlight-toc a[aria-current="true"] {
+  color: var(--sl-color-white);
+  font-weight: 500;
+}
+
+/* Kill ALL right sidebar borders */
+.right-sidebar-panel::before,
+.right-sidebar-panel::after {
+  display: none !important;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: transparent;
+  color: var(--sl-color-white);
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  font-size: 0.8125rem;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-gray-2);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   CODE BLOCKS
+   ========================================================================== */
+
+/* Inline code */
+code:not(pre code) {
+  background-color: var(--sl-color-bg-inline-code);
+  color: var(--sl-color-gray-1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: var(--sl-font-mono);
+}
+
+/* Code blocks */
+pre {
+  background-color: #111316 !important;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   CALLOUTS / ASIDES
+   ========================================================================== */
+
+.starlight-aside,
+aside[class*="aside"] {
+  border-radius: 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border: none;
+  border-left: 2px solid var(--sl-color-gray-4);
+  background-color: rgba(30, 34, 40, 0.4);
+}
+
+.starlight-aside__title,
+aside .aside-title {
+  color: var(--sl-color-gray-2);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Note */
+.starlight-aside--note,
+aside.note {
+  border-left-color: var(--sl-color-gray-4);
+  background-color: rgba(30, 34, 40, 0.4);
+}
+
+/* Tip */
+.starlight-aside--tip,
+aside.tip {
+  border-left-color: var(--sl-color-gray-4);
+  background-color: rgba(30, 34, 40, 0.4);
+}
+
+/* Caution */
+.starlight-aside--caution,
+aside.caution {
+  border-left-color: #8B7355;
+  background-color: rgba(139, 115, 85, 0.08);
+}
+
+/* Danger */
+.starlight-aside--danger,
+aside.danger {
+  border-left-color: #8B5A5A;
+  background-color: rgba(139, 90, 90, 0.08);
+}
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+
+button[data-open-modal] {
+  background-color: transparent;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 6px;
+  color: var(--sl-color-gray-3);
+}
+
+button[data-open-modal]:hover {
+  background-color: var(--sl-color-gray-5);
+  border-color: var(--sl-color-hairline-light);
+  color: var(--sl-color-gray-2);
+}
+
+/* ==========================================================================
+   PAGINATION
+   ========================================================================== */
+
+.pagination-links a {
+  background-color: transparent;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+
+.pagination-links a:hover {
+  background-color: transparent;
+  border-color: var(--sl-color-hairline-light);
+}
+
+/* ==========================================================================
+   CONTENT DIVIDERS
+   ========================================================================== */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--sl-color-hairline);
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-gray-3);
+}
+
+/* ==========================================================================
+   HERO (SPLASH PAGE)
+   ========================================================================== */
+
+.hero {
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  font-size: 2.125rem; /* 34px */
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero .tagline {
+  font-size: 1rem; /* 16px */
+  color: var(--sl-color-gray-2);
+  max-width: 36rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   AGGRESSIVE BORDER REMOVAL
+   Kill ALL vertical dividers throughout Starlight
+   ========================================================================== */
+
+/* Main layout borders */
+.main-pane,
+.content-panel,
+.main-frame,
+[data-sl-content],
+.sl-content {
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Mobile menu borders */
+starlight-menu-button,
+[data-sl-menu-button] {
+  border: none !important;
+}
+
+/* Any remaining pseudo-element borders */
+.sidebar-pane *::before,
+.sidebar-pane *::after,
+.right-sidebar-panel *::before,
+.right-sidebar-panel *::after,
+main *::before,
+main *::after {
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Starlight specific layout dividers */
+[data-has-sidebar] .main-frame {
+  border-inline-start: none !important;
+}
+
+.right-sidebar {
+  border-inline-start: none !important;
+}
+
+starlight-toc {
+  border-inline-start: none !important;
+}
+
+/* Global fallback - remove any 1px borders that look like dividers */
+* {
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+/* But preserve intentional borders we want */
+pre,
+code:not(pre code),
+button[data-open-modal],
+.pagination-links a,
+.signin-button,
+table th,
+table td,
+hr,
+.starlight-aside,
+aside[class*="aside"] {
+  border-color: revert !important;
+}
+
+pre {
+  border: 1px solid var(--sl-color-hairline) !important;
+}
+
+/* ==========================================================================
+   HEADING ANCHOR LINK ICON
+   Reduce the size of the hover link icon
+   ========================================================================== */
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a[href^="#"] {
+  font-size: 0.65em;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  margin-left: 0.25em;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):hover a[href^="#"] {
+  opacity: 0.4;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a[href^="#"]:hover {
+  opacity: 0.7;
+}
+
+/* Starlight's anchor icon specifically */
+.heading-anchor-icon,
+[data-heading-anchor-icon],
+.sl-markdown-content a .icon {
+  width: 0.65em !important;
+  height: 0.65em !important;
+}
+
+/* ==========================================================================
+   ENTRANCE ANIMATION
+   Subtle fade-in for page content
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sl-markdown-content {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Stagger effect for headings */
+.sl-markdown-content h1 {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.sl-markdown-content > p:first-of-type {
+  animation: fadeInUp 0.4s ease-out 0.05s both;
+}
+
+/* ==========================================================================
+   MOBILE REFINEMENTS
+   ========================================================================== */
+
+@media (max-width: 50rem) {
+  h1 {
+    font-size: 1.75rem; /* 28px on mobile */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* 20px on mobile */
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
