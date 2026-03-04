@@ -23,11 +23,11 @@ export default defineConfig({
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:image:width', content: '267' },
+          attrs: { property: 'og:image:width', content: '2048' },
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:image:height', content: '400' },
+          attrs: { property: 'og:image:height', content: '2048' },
         },
         {
           tag: 'meta',

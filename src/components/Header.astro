@@ -21,7 +21,7 @@ import type { Props } from '@astrojs/starlight/props';
 <style>
   .header {
     background-color: #0B0E12;
-    border-bottom: 1px solid #1E2228;
+    border-bottom: none;
     padding: 0 3.5rem;
     height: 100%;
     display: flex;
@@ -116,9 +116,10 @@ import type { Props } from '@astrojs/starlight/props';
   @media (max-width: 50rem) {
     .header {
       padding: 0 1rem;
+      padding-right: 4rem; /* space for Starlight's mobile menu button */
     }
 
-    .search-container {
+    .header-right {
       display: none;
     }
   }

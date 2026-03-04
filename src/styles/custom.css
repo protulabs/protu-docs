@@ -538,6 +538,13 @@ button[data-open-modal] {
   display: none !important;
 }
 
+/* Hide theme toggle (dark mode only) */
+starlight-theme-select,
+[data-theme-select],
+select[aria-label="Select theme"] {
+  display: none !important;
+}
+
 /* ==========================================================================
    PAGINATION
    ========================================================================== */
@@ -836,6 +843,12 @@ pre {
 
   h2 {
     font-size: 1.25rem; /* 20px on mobile */
+  }
+
+  /* Centre mobile sidebar menu */
+  .sidebar-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
   .hero h1 {

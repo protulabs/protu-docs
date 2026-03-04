@@ -1,6 +1,8 @@
 ---
 title: Overview
 description: What Protu is and how to get started.
+tableOfContents:
+  maxHeadingLevel: 3
 ---
 
 Get up and running with Protu, from creating your first team to seeing your first intelligence.
