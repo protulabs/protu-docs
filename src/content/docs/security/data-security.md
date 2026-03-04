@@ -5,8 +5,6 @@ description: Technical security measures, encryption, access controls, and infra
 
 Protu protects your data with encryption at every layer, strict access controls, continuous monitoring, and EU-hosted infrastructure. Here is how each measure works.
 
----
-
 ## Security Overview
 
 Protu uses layered security, meaning multiple overlapping protections so that no single point of failure compromises your data.

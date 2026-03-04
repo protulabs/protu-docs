@@ -7,8 +7,6 @@ Employee profiles show the behavioural patterns of your team members: how they w
 
 Protu has two manager views for each employee: a **profile page** (overview and narrative) and an **insights page** (detailed markers, growth opportunities, and related profiles). Both are accessible from the employee list.
 
----
-
 ## The Profile Page
 
 When you open an employee's profile, you see a summary card with:

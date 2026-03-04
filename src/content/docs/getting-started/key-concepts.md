@@ -5,8 +5,6 @@ description: How Protu thinks about behaviour and what the key terms mean.
 
 How Protu thinks about behaviour and what the key terms mean.
 
----
-
 ## Markers
 
 **Markers** are the 10 dimensions Protu uses to measure working style.
@@ -64,14 +62,9 @@ Impact shows current strength. Influence style shows how someone expresses that 
 
 ## Behavioural Energy
 
-Protu groups patterns into two broad energies:
+Protu's composition model maps team behaviour across two fundamental dimensions: **cohesion** (how tightly a team aligns) and **adaptability** (how flexibly it responds to change). This is informed by several areas of research, including work on collective intelligence, which shows that team performance depends not just on individual capability, but on how those capabilities combine and interact.
 
-| Energy | What it looks like | Markers that contribute |
-|--------|-------------------|------------------------|
-| **Drive** | Achievement-oriented, pushes for progress | Leadership, Perseverance, Growth Mindset |
-| **Stability** | Grounding, maintains calm, supports consistency | Self-awareness, Accountability, Social Awareness |
-
-Teams benefit from a mix. Too much Drive risks burnout; too much Stability risks slow movement.
+All 10 markers contribute to this picture in different ways. Rather than sorting markers into fixed categories, Protu analyses how they balance across your team to surface strengths, gaps, and opportunities.
 
 ---
 
@@ -135,7 +128,7 @@ Learn about the science in [Principles](/methodology/principles/).
 | **Bridge** | An employee on 2+ teams, connecting them |
 | **Candidate** | Someone being assessed for a role |
 | **Confidence level** | How reliable Team Intelligence is (High/Moderate/Limited) |
-| **Drive energy** | Achievement-oriented patterns (Leadership, Perseverance, Growth Mindset) |
+| **Cohesion** | How tightly a team aligns in its behavioural patterns |
 | **Employee** | A team member who has completed (or been invited to) an assessment |
 | **Engage for** | Situations where someone's strengths are valuable |
 | **Impact level** | Behavioural strength (Exceptional → Starting) |
@@ -143,7 +136,7 @@ Learn about the science in [Principles](/methodology/principles/).
 | **Marker** | One of 10 high-level behavioural dimensions |
 | **Role** | A hiring position you're recruiting for |
 | **Scenario** | A "what-if" simulation of adding, removing, or replacing someone |
-| **Stability energy** | Grounding patterns (Self-awareness, Accountability, Social Awareness) |
+| **Adaptability** | How flexibly a team responds to change |
 | **Influences through** | Submarkers where someone scores notably higher than peers |
 | **Submarker** | One of 80+ granular behaviours within markers |
 | **Team Intelligence** | Aggregate insights about how a team works together |

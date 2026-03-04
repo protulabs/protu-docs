@@ -5,8 +5,6 @@ description: How to create teams, add members, and manage team settings in Protu
 
 Teams are how you organise people in Protu. When team members complete their assessments, Protu reveals how the team works together: strengths, gaps, dynamics, and who connects you to other teams.
 
----
-
 ## Creating a New Team
 
 To create a team:

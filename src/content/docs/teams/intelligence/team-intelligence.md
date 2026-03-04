@@ -5,8 +5,6 @@ description: Understanding your team's composition, dynamics, scenario planning,
 
 Team Intelligence shows you how your team works together. It goes beyond who's on the team, showing how behavioural patterns combine to create dynamics, strengths, and gaps. It requires **3+ completed profiles** to activate.
 
----
-
 ## The Intelligence Page
 
 The Team Intelligence page has three main parts:

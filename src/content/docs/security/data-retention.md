@@ -5,8 +5,6 @@ description: How long Protu keeps your data and what happens when it's deleted.
 
 How long Protu keeps your data and what happens when it's deleted.
 
----
-
 ## Overview
 
 We retain data to provide our service and meet legal obligations. This page explains what we keep, for how long, and how deletion works.

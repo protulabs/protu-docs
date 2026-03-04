@@ -1,11 +1,9 @@
 ---
-title: "Your Assessment & Profile"
+title: "Your Profile"
 description: "For employees: what to expect from the Protu assessment and how to read your profile."
 ---
 
 If you've been invited to take a Protu assessment, this page walks you through what it involves, what you'll see afterwards, and how your results are used.
-
----
 
 ## The Assessment
 
@@ -89,7 +87,7 @@ Click to expand any marker and you'll see the more granular dimensions underneat
 
 ---
 
-## What Your Employer Sees
+## What Your Manager Sees
 
 ### They see
 
@@ -138,7 +136,7 @@ You have full control over your personal data:
 - **Request correction** if something seems inaccurate
 - **Request deletion** of your personal data
 
-Start by contacting your employer. If you haven't heard back within 14 days, reach out to us directly at support@protu.io.
+Start by contacting your manager. If you haven't heard back within 14 days, reach out to us directly at support@protu.io.
 
 For full details, see [Privacy & GDPR](/security/privacy/).
 
@@ -148,7 +146,7 @@ For full details, see [Privacy & GDPR](/security/privacy/).
 
 ### Can I retake the assessment?
 
-This is managed by your employer. Contact them if you'd like to retake it.
+This is managed by your manager. Contact them if you'd like to retake it.
 
 ### Who can see my profile?
 
@@ -160,4 +158,4 @@ Protu provides insights to help teams collaborate, not to make decisions about i
 
 ### How long is my data kept?
 
-Your data is retained while your employer's workspace is active. You can request deletion at any time.
+Your data is retained while your organisation's workspace is active. You can request deletion at any time.

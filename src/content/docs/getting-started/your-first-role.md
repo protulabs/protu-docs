@@ -5,8 +5,6 @@ description: Create a role, invite candidates, and see your first insights.
 
 This guide walks you through creating a role, inviting candidates, and seeing your first insights. Takes about 10 minutes.
 
----
-
 ## Create a Role
 
 From your dashboard, click **Create Role**.

@@ -5,8 +5,6 @@ description: How to connect roles to teams and use team fit insights when evalua
 
 The best hiring insights come from connecting roles to teams. When you link a role to a team, Protu shows how candidates would affect that team's composition, not just their individual profile.
 
----
-
 ## Why Link Roles to Teams
 
 Linking a role to a team unlocks a key hiring insight: how a candidate would change your team, not just who they are.

@@ -5,8 +5,6 @@ description: How magic links provide secure, password-free authentication for ca
 
 Candidates and employees access Protu through magic links: secure, time-limited URLs sent by email. No passwords to create, remember, or reset.
 
----
-
 ## How It Works
 
 ### The magic link flow

@@ -5,8 +5,6 @@ description: How to add and invite team members to complete their Protu assessme
 
 Before you can build teams and unlock Team Intelligence, your people need to complete their assessments. Here's how to get them started.
 
----
-
 ## Adding Employees
 
 There are several ways to add employees to Protu, depending on how many you're adding.

@@ -46,6 +46,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { label: 'Overview', link: '/getting-started/getting-started/' },
+            { label: 'Key concepts', link: '/getting-started/key-concepts/' },
             { label: 'Your first role', link: '/getting-started/your-first-role/' },
           ],
         },
@@ -55,7 +56,7 @@ export default defineConfig({
           items: [
             { label: 'Inviting employees', link: '/employees/inviting-employees/' },
             { label: 'Employee profiles', link: '/employees/employee-profiles/' },
-            { label: 'Your assessment & profile', link: '/employees/understanding-insights/' },
+            { label: 'Your profile', link: '/employees/understanding-insights/' },
           ],
         },
         {

@@ -7,8 +7,6 @@ tableOfContents:
 
 Get up and running with Protu, from creating your first team to seeing your first intelligence.
 
----
-
 ## What Protu Does
 
 Protu is a behavioural intelligence platform that transforms how organisations understand their people.

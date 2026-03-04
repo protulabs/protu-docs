@@ -5,8 +5,6 @@ description: How to get in touch with the Protu team.
 
 How to get in touch with the Protu team.
 
----
-
 ## Support
 
 **support@protu.io**

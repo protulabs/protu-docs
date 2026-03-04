@@ -5,8 +5,6 @@ description: The principles, ethics, and research behind Protu's methodology.
 
 Protu is built on transparency, ethics, and a commitment to helping people and organisations understand how they work. This page covers our principles and the research behind our methodology.
 
----
-
 ## The Governing Principle
 
 > **Empower, never weaponise.**

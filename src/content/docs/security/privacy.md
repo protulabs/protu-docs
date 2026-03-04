@@ -5,8 +5,6 @@ description: How Protu Technology Limited collects, uses, stores, and protects p
 
 How Protu Technology Limited collects, uses, stores, and protects your personal data when you use our platform and services.
 
----
-
 ## Introduction
 
 This Privacy Policy explains how **Protu Technology Limited** ("Protu", "we", "us", "our") collects, uses, stores, and protects personal data when you use our platform and services.
