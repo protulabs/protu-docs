@@ -1,6 +1,6 @@
 ---
-title: Your Assessment & Profile
-description: For employees: what to expect from the Protu assessment and how to read your profile.
+title: "Your Assessment & Profile"
+description: "For employees: what to expect from the Protu assessment and how to read your profile."
 ---
 
 If you've been invited to take a Protu assessment, this page walks you through what it involves, what you'll see afterwards, and how your results are used.
