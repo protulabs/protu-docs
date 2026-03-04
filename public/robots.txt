@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://docs.protu.io/sitemap-index.xml

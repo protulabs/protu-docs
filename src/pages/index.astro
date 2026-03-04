@@ -1,0 +1,61 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{ title: 'Protu Docs', tableOfContents: false }}>
+  <p>Learn how to set up teams, hire candidates and use Protu's features.</p>
+
+  <div class="homepage-cards">
+    <a href="/getting-started/getting-started/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 10l4 4 8-8" />
+      </svg>
+      <span class="homepage-card-title">Getting Started</span>
+      <span class="homepage-card-desc">Set up your account and learn the basics.</span>
+    </a>
+
+    <a href="/employees/inviting-employees/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="7" r="3" />
+        <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      </svg>
+      <span class="homepage-card-title">Employees</span>
+      <span class="homepage-card-desc">Invite, manage, and understand your team members.</span>
+    </a>
+
+    <a href="/teams/creating-teams/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="7" cy="7" r="2.5" />
+        <circle cx="13" cy="7" r="2.5" />
+        <path d="M2 16c0-2.8 2.2-5 5-5s5 2.2 5 5M8 16c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      </svg>
+      <span class="homepage-card-title">Teams</span>
+      <span class="homepage-card-desc">Build teams, hire into them, and explore intelligence.</span>
+    </a>
+
+    <a href="/security/privacy/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2l6 3v5c0 4-2.5 6.5-6 8-3.5-1.5-6-4-6-8V5l6-3z" />
+      </svg>
+      <span class="homepage-card-title">Security</span>
+      <span class="homepage-card-desc">Privacy, data protection, and access controls.</span>
+    </a>
+
+    <a href="/methodology/principles/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3v14h14" />
+        <path d="M7 13l3-4 3 2 4-5" />
+      </svg>
+      <span class="homepage-card-title">Methodology</span>
+      <span class="homepage-card-desc">How Protu scores and evaluates talent.</span>
+    </a>
+
+    <a href="/support/contact/" class="homepage-card">
+      <svg class="homepage-card-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5h14v10H5l-2 2V5z" />
+      </svg>
+      <span class="homepage-card-title">Support</span>
+      <span class="homepage-card-desc">Get help and contact our team.</span>
+    </a>
+  </div>
+</StarlightPage>

@@ -1,6 +1,5 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import Search from '@astrojs/starlight/components/Search.astro';
 ---
 
 <header class="header">
@@ -11,11 +10,9 @@ import Search from '@astrojs/starlight/components/Search.astro';
         <span class="divider">|</span>
         <span class="docs-label">Docs</span>
       </a>
-      <div class="search-container">
-        <Search {...Astro.props} />
-      </div>
     </div>
     <div class="header-right">
+      <a href="/support/contact/" class="nav-link">Contact us</a>
       <a href="https://app.protu.io" class="signin-button">Sign in</a>
     </div>
   </div>
@@ -25,8 +22,8 @@ import Search from '@astrojs/starlight/components/Search.astro';
   .header {
     background-color: #0B0E12;
     border-bottom: 1px solid #1E2228;
-    padding: 0 1.5rem;
-    height: 56px;
+    padding: 0 3.5rem;
+    height: 100%;
     display: flex;
     align-items: center;
   }
@@ -53,7 +50,7 @@ import Search from '@astrojs/starlight/components/Search.astro';
   }
 
   .logo-wordmark {
-    height: 16px;
+    height: 20px;
     width: auto;
   }
 
@@ -70,47 +67,50 @@ import Search from '@astrojs/starlight/components/Search.astro';
     letter-spacing: 0;
   }
 
-  .search-container {
-    margin-left: 0.5rem;
-  }
-
-  .search-container :global(button[data-open-modal]) {
-    background-color: transparent;
-    border: 1px solid #1E2228;
-    border-radius: 6px;
-    padding: 0.375rem 0.75rem;
-    color: #5A6475;
-    font-size: 0.8125rem;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-
-  .search-container :global(button[data-open-modal]:hover) {
-    border-color: #252A31;
-    color: #939FAD;
-  }
 
   .header-right {
     display: flex;
     align-items: center;
+    gap: 1rem; /* 16px */
+  }
+
+  .nav-link {
+    color: #EFF3F4;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    border-radius: 6px;
+  }
+
+  .nav-link:hover {
+    background-color: #191E27;
   }
 
   .signin-button {
-    background-color: transparent;
-    border: 1px solid #1E2228;
+    background-color: #EFF3F4;
+    border: none;
     border-radius: 6px;
-    padding: 0.5rem 1rem;
-    color: #EFF3F4;
-    font-size: 0.8125rem;
-    font-weight: 400;
+    padding: 0 0.75rem; /* 12px left/right */
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: #0B0E12;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease;
   }
 
   .signin-button:hover {
-    background-color: #1E2228;
-    border-color: #252A31;
+    background-color: #E4EEF0;
+    color: #0B0E12;
   }
 
   @media (max-width: 50rem) {

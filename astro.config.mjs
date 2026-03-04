@@ -42,15 +42,7 @@ export default defineConfig({
           items: [
             { label: 'Creating teams', link: '/teams/creating-teams/' },
             { label: 'Hiring into teams', link: '/teams/hiring-into-teams/' },
-            {
-              label: 'Team Intelligence',
-              collapsed: true,
-              items: [
-                { label: 'Team Composition', link: '/teams/intelligence/team-composition/' },
-                { label: 'Team Dynamics', link: '/teams/intelligence/team-dynamics/' },
-                { label: 'Scenario views', link: '/teams/intelligence/scenario-views/' },
-              ],
-            },
+            { label: 'Team Intelligence', link: '/teams/intelligence/team-intelligence/' },
           ],
         },
         {

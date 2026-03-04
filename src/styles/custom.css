@@ -1,5 +1,4 @@
 /* Protu Documentation Theme */
-@import './protu-theme.css';
 
 /* ==========================================================================
    STARLIGHT THEME OVERRIDES
@@ -34,7 +33,7 @@
   --sl-color-bg-inline-code: #16181c;
 
   /* 3. Subtler borders - almost invisible */
-  --sl-color-hairline: #18191B;
+  --sl-color-hairline: #181E25;
   --sl-color-hairline-light: #1F2023;
 
   /* Typography */
@@ -43,7 +42,12 @@
 
   /* Content width */
   --sl-content-width: 48rem;
-  --sl-sidebar-width: 16rem;
+  --sl-sidebar-width: 18.125rem; /* 290px: 56px left margin + 234px content */
+  --sl-sidebar-pad-x: 0;
+  --sl-content-gap-y: 0.5rem;
+
+  /* Nav height - match custom header */
+  --sl-nav-height: 3.5rem;
 }
 
 /* ==========================================================================
@@ -54,8 +58,8 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k.woff2') format('woff2');
+  font-display: block;
+  src: url('/fonts/SpaceGrotesk.woff2') format('woff2');
 }
 
 /* ==========================================================================
@@ -64,6 +68,7 @@
 
 html {
   background-color: var(--sl-color-black);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -77,30 +82,70 @@ body {
    TYPOGRAPHY - Per design spec
    ========================================================================== */
 
-/* Page title: 34px, weight 500, no divider */
+/* Page title: 30px, weight 500, no divider */
 h1 {
   font-family: var(--sl-font);
-  font-size: 2.125rem; /* 34px */
+  font-size: 1.875rem; /* 30px */
   font-weight: 500;
   color: var(--sl-color-white);
   line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
   border-bottom: none;
   padding-bottom: 0;
+}
+
+/* Tighten spacing on title content panel */
+.content-panel:has(h1) {
+  padding-bottom: 0;
+}
+
+/* Reduce gap between title and first paragraph */
+.content-panel:has(h1) + .content-panel {
+  padding-top: 0;
 }
 
 /* Content headings: 22px, weight 500 */
 h2 {
   font-family: var(--sl-font);
-  font-size: 1.375rem; /* 22px */
+  font-size: 1.25rem; /* 20px */
   font-weight: 500;
   color: var(--sl-color-white);
   line-height: 1.4;
-  margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0;
   border-bottom: none;
+}
+
+/* Only apply top margin in content area — not right sidebar */
+.sl-markdown-content h2 {
+  margin-top: 3rem;
+}
+
+/* Override heading wrapper margin (Starlight applies margin on wrapper, not h2) */
+.sl-markdown-content :not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper) + .sl-heading-wrapper {
+  margin-top: 3rem !important;
+}
+
+/* Right sidebar h2 should have no extra top margin */
+.right-sidebar h2,
+starlight-toc h2 {
+  margin-top: 0;
+}
+
+/* Hide "On this page" heading visually, keep for accessibility */
+starlight-toc h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+/* Hide the auto-generated "Overview" TOC entry */
+starlight-toc > nav > ul > li:first-child {
+  display: none;
 }
 
 h3 {
@@ -133,7 +178,13 @@ h4, h5, h6 {
 p, li {
   color: var(--sl-color-gray-2);
   line-height: 1.75;
-  font-size: 0.9375rem; /* 15px */
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Reduce list indentation — browser default is 40px, too much */
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  padding-inline-start: 1.25rem;
 }
 
 /* Strong text */
@@ -175,6 +226,11 @@ header.header {
   border-bottom: 1px solid var(--sl-color-hairline);
 }
 
+/* Remove outer Starlight header wrapper padding so custom header handles layout */
+.page > header.header {
+  padding: 0;
+}
+
 /* Site title styling */
 .site-title {
   font-weight: 400;
@@ -197,6 +253,25 @@ nav.sidebar,
   border-right: none !important;
 }
 
+/* 56px breathing room below nav for all columns */
+.sidebar-pane {
+  padding-top: 3.5rem;
+}
+
+/* 56px left margin from viewport edge, 234px content area */
+.sidebar-content {
+  padding-left: 3.5rem !important;
+  padding-right: 0 !important;
+}
+
+.content-panel:first-child {
+  padding-top: 4rem;
+}
+
+.right-sidebar {
+  padding-top: 3.5rem;
+}
+
 /* Kill ALL sidebar borders aggressively */
 .sidebar-pane::before,
 .sidebar-pane::after,
@@ -212,23 +287,51 @@ main,
   border: none !important;
 }
 
-/* Sidebar section headers: 14px, weight 500 */
-.sidebar-group > summary,
-[data-sl-sidebar-group] > summary,
-.top-level > summary {
+/* Sidebar section headers: 14px, weight 500, 12px padding-bottom */
+nav.sidebar summary {
   font-size: 0.875rem; /* 14px */
   font-weight: 500;
-  color: var(--sl-color-white);
   letter-spacing: 0;
+  padding: 0.2em 0.5rem 0.75rem !important; /* 12px bottom */
+}
+
+/* Section label: muted by default, bright when section contains active page */
+nav.sidebar summary .large {
+  color: #939FAD;
+}
+nav.sidebar details:has(a[aria-current="page"]) > summary .large {
+  color: #EFF3F4;
+}
+
+/* Force group label (with chevron) to 14px — override Starlight .large */
+nav.sidebar .large {
+  font-size: 0.875rem !important; /* 14px */
+}
+
+/* Sidebar item spacing: 1rem between top-level items */
+nav.sidebar .top-level > li + li {
+  margin-top: 0.5rem !important;
 }
 
 /* Sidebar links */
 nav.sidebar a {
-  color: var(--sl-color-gray-2);
+  color: #EFF3F4;
   font-size: 0.875rem; /* 14px */
+  font-weight: 400;
   padding: 0.375rem 0;
   border-radius: 0;
   transition: color 0.15s ease;
+}
+
+/* Nested sidebar link colors */
+nav.sidebar ul ul a {
+  color: #939FAD;
+}
+nav.sidebar ul ul a:hover {
+  color: #EFF3F4;
+}
+nav.sidebar ul ul a[aria-current="page"] {
+  color: #EFF3F4;
 }
 
 nav.sidebar a:hover {
@@ -263,10 +366,11 @@ starlight-toc {
 }
 
 starlight-toc a {
-  color: var(--sl-color-gray-3);
+  color: #6E7883;
   font-size: 0.8125rem;
   transition: color 0.15s ease;
   padding-left: 0;
+  padding-block: 0.375rem !important; /* 6px top/bottom */
   border: none !important;
 }
 
@@ -283,6 +387,21 @@ starlight-toc a[aria-current="true"] {
 .right-sidebar-panel::before,
 .right-sidebar-panel::after {
   display: none !important;
+}
+
+/* Hide right sidebar on mobile — mobile TOC component handles small screens */
+@media (max-width: 71.9375rem) {
+  .right-sidebar-container {
+    display: none;
+  }
+}
+
+/* Fix right sidebar positioning below nav (desktop only) */
+@media (min-width: 72rem) {
+  .right-sidebar {
+    top: var(--sl-nav-height);
+    height: calc(100vh - var(--sl-nav-height));
+  }
 }
 
 /* ==========================================================================
@@ -302,18 +421,23 @@ th {
   font-weight: 500;
   text-align: left;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--sl-color-hairline);
-  font-size: 0.8125rem;
+  border-bottom: 1px solid #1D242D !important;
+  font-size: 0.875rem; /* 14px — match td */
+  white-space: nowrap;
 }
 
 td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--sl-color-hairline);
+  border-bottom: 1px solid #1D242D !important;
   color: var(--sl-color-gray-2);
 }
 
 tr:last-child td {
   border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #0E1215;
 }
 
 /* ==========================================================================
@@ -400,17 +524,10 @@ aside.danger {
    SEARCH
    ========================================================================== */
 
+/* Hide search functionality */
+site-search,
 button[data-open-modal] {
-  background-color: transparent;
-  border: 1px solid var(--sl-color-hairline);
-  border-radius: 6px;
-  color: var(--sl-color-gray-3);
-}
-
-button[data-open-modal]:hover {
-  background-color: var(--sl-color-gray-5);
-  border-color: var(--sl-color-hairline-light);
-  color: var(--sl-color-gray-2);
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -418,15 +535,86 @@ button[data-open-modal]:hover {
    ========================================================================== */
 
 .pagination-links a {
-  background-color: transparent;
-  border: 1px solid var(--sl-color-hairline);
-  border-radius: 6px;
-  transition: border-color 0.15s ease;
+  background-color: #0B0E12 !important;
+  border: 1px solid #1D242D !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  padding: 1rem !important; /* 16px */
+  box-shadow: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
+  color: var(--sl-color-gray-2) !important;
+}
+
+.pagination-links a[rel="next"] {
+  flex-direction: row-reverse !important;
+  text-align: end;
 }
 
 .pagination-links a:hover {
-  background-color: transparent;
-  border-color: var(--sl-color-hairline-light);
+  background-color: #101317 !important;
+  border-color: #2A3340 !important;
+  color: var(--sl-color-gray-2) !important;
+}
+
+/* Lock arrow icon color — no change on hover */
+.pagination-links a svg {
+  color: var(--sl-color-gray-2) !important;
+  flex-shrink: 0;
+}
+
+/* Direction label + page title stacked */
+.pagination-links a > span {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Page title: weight 500, 14px */
+.pagination-links .link-title {
+  font-size: 0.875rem !important; /* 14px */
+  font-weight: 500;
+  color: #EFF3F4;
+}
+
+/* ==========================================================================
+   BOTTOM-OF-PAGE SPACING
+   Ensures TOC highlights all items by adding space at page bottom
+   ========================================================================== */
+
+/* Hide empty meta section (no EditLink or LastUpdated configured) */
+.meta {
+  display: none !important;
+}
+
+/* Pagination spacing from content */
+.pagination-links {
+  padding-top: 6rem;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.sl-container > * + * {
+  margin-top: 3rem !important;
+}
+
+/* ==========================================================================
+   CONTENT / RIGHT SIDEBAR WIDTH ADJUSTMENT
+   80px gap between main content and right sidebar
+   ========================================================================== */
+
+@media (min-width: 72rem) {
+  /* Add 80px right padding to main content area */
+  [data-has-sidebar][data-has-toc] .main-pane {
+    padding-right: 5rem; /* 80px */
+  }
+
+  /* Shrink right sidebar container by 80px */
+  .right-sidebar-container {
+    width: calc(
+      var(--sl-sidebar-width) + (100% - var(--sl-content-width) - var(--sl-sidebar-width)) / 2 - 5rem
+    ) !important;
+  }
 }
 
 /* ==========================================================================
@@ -444,29 +632,82 @@ hr {
    ========================================================================== */
 
 footer {
-  border-top: 1px solid var(--sl-color-hairline);
+  border-top: none;
   color: var(--sl-color-gray-3);
 }
 
 /* ==========================================================================
-   HERO (SPLASH PAGE)
+   HOMEPAGE
+   Wider content area when no TOC (only the homepage disables TOC)
    ========================================================================== */
 
-.hero {
-  padding: 3rem 0;
+html:not([data-has-toc]) .sl-container {
+  max-width: 60rem; /* 960px — fits 3 × ~300px cards */
 }
 
-.hero h1 {
-  font-size: 2.125rem; /* 34px */
+/* ==========================================================================
+   HOMEPAGE CARDS
+   ========================================================================== */
+
+.homepage-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.homepage-card {
+  background-color: #0E1215;
+  border: 1px solid #191E27;
+  border-left-color: #191E27 !important;
+  border-right-color: #191E27 !important;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-card:hover {
+  border-color: #292D37;
+  border-left-color: #292D37 !important;
+  border-right-color: #292D37 !important;
+  background-color: #13181C;
+}
+
+.homepage-card-icon {
+  width: 24px;
+  height: 24px;
+  color: #EFF3F4;
+  margin-bottom: 2.5rem;
+}
+
+.homepage-card-title {
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  color: #E2EAEC;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
-.hero .tagline {
-  font-size: 1rem; /* 16px */
-  color: var(--sl-color-gray-2);
-  max-width: 36rem;
-  line-height: 1.75;
+.homepage-card-desc {
+  font-size: 0.875rem;
+  color: #8A8F9E;
+  line-height: 1.6;
+}
+
+@media (max-width: 50rem) {
+  .homepage-cards {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 50rem) and (max-width: 64rem) {
+  .homepage-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ==========================================================================
@@ -522,15 +763,10 @@ starlight-toc {
   border-right-color: transparent !important;
 }
 
-/* But preserve intentional borders we want */
+/* But preserve intentional borders we want (left/right only — the * rule above only affects those) */
 pre,
 code:not(pre code),
 button[data-open-modal],
-.pagination-links a,
-.signin-button,
-table th,
-table td,
-hr,
 .starlight-aside,
 aside[class*="aside"] {
   border-color: revert !important;
@@ -545,27 +781,17 @@ pre {
    Reduce the size of the hover link icon
    ========================================================================== */
 
-.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a[href^="#"] {
-  font-size: 0.65em;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  margin-left: 0.25em;
+/* Override heading wrapper font-size to match headings, so anchor icon scales properly */
+.sl-markdown-content .sl-heading-wrapper {
+  --sl-anchor-icon-size: 0.7em;
 }
 
-.sl-markdown-content :is(h1, h2, h3, h4, h5, h6):hover a[href^="#"] {
-  opacity: 0.4;
+.sl-markdown-content .sl-heading-wrapper.level-h2 {
+  font-size: 1.25rem; /* match h2 size */
 }
 
-.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a[href^="#"]:hover {
-  opacity: 0.7;
-}
-
-/* Starlight's anchor icon specifically */
-.heading-anchor-icon,
-[data-heading-anchor-icon],
-.sl-markdown-content a .icon {
-  width: 0.65em !important;
-  height: 0.65em !important;
+.sl-markdown-content .sl-heading-wrapper.level-h3 {
+  font-size: 1.0625rem; /* match h3 size */
 }
 
 /* ==========================================================================
@@ -573,28 +799,17 @@ pre {
    Subtle fade-in for page content
    ========================================================================== */
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .sl-markdown-content {
-  animation: fadeInUp 0.4s ease-out;
-}
-
-/* Stagger effect for headings */
-.sl-markdown-content h1 {
-  animation: fadeInUp 0.4s ease-out;
-}
-
-.sl-markdown-content > p:first-of-type {
-  animation: fadeInUp 0.4s ease-out 0.05s both;
+  animation: fadeIn 0.3s ease-out;
 }
 
 /* ==========================================================================
