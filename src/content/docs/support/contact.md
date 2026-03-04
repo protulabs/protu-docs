@@ -24,12 +24,6 @@ Help us help you faster:
 
 We aim to get back to you within **one business day**. If something takes longer to resolve, we'll keep you in the loop.
 
-### Office hours
-
-Monday – Friday, 9am – 6pm GMT
-
-We monitor for urgent issues outside these hours.
-
 ---
 
 ## Urgent Issues
