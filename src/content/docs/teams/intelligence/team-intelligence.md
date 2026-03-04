@@ -107,12 +107,7 @@ The vertical axis runs from **Light** (bottom) to **Strong** (top). Each marker 
 
 ### How the Optimal Target is Calculated
 
-The Optimal Target isn't a generic ideal. It's computed for your specific team using:
-
-- **Bridge strength:** Bridges centred between clusters get higher weighting
-- **Gap markers:** Pull toward centre (50) to encourage filling blind spots
-- **Confidence adjustment:** Smaller teams get smaller recommended shifts
-- **Pattern analysis:** Diverse teams get additional coherence pull (up to 10%)
+The Optimal Target is calculated specifically for your team. It takes into account your current composition, where gaps exist, how influence is distributed, and your team's size. It's not a generic benchmark. It adapts as your team changes.
 
 ### Dominant and Gap Markers
 
@@ -358,21 +353,23 @@ Wide coherence zones on gap markers may need attention. Narrow zones on strength
 
 ---
 
-## Limitations
+## Getting the Best Results
 
-Team Intelligence is a useful tool, but it has limitations. Understanding them helps you use it well.
+Team Intelligence analyses behavioural patterns across your team and synthesises them into actionable insight. A few things are worth keeping in mind to get the most from it.
 
-### What Team Intelligence Doesn't Do
+### What it's designed to do
 
-- **Predict performance.** Behavioural patterns indicate working style, not outcomes.
-- **Make decisions for you.** It provides information and context, but decisions are yours to make.
-- **Work with small teams.** It requires 3+ completed profiles for meaningful analysis.
+Protu measures **how people work**, not how well they perform. This is intentional. Working style is consistent, observable, and actionable. It tells you things like who bridges groups, where capabilities concentrate, and what happens to your team's dynamics when someone joins or leaves. These are patterns that traditional tools miss entirely.
 
-### When to Be Cautious
+The intelligence is there to surface what you can't see on your own and give you context for better decisions. It doesn't make those decisions for you, and that's by design. The people closest to the situation are always best placed to act.
 
-- **Very small teams** (3-4 people): Patterns may shift significantly with each new member
-- **Low completion** (< 60%): Insights may not represent the full team
-- **Rapid change**: Teams in flux may show unstable patterns
+### When to pay extra attention
+
+- **Small teams (3-4 people):** Each new member shifts the picture noticeably. Revisit insights after changes settle.
+- **Below 60% completion:** The analysis works with what it has, but gaps in completion mean gaps in the picture. The insight quality gauge shows you where you stand.
+- **Teams in transition:** If people are joining and leaving frequently, patterns may not have stabilised yet. Give it a few weeks of stable membership before drawing conclusions.
+
+Analysis deepens as more of your team completes their assessments. A team with full completion gives you a significantly richer and more reliable view than one at the threshold.
 
 ---
 

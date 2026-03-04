@@ -13,7 +13,7 @@ Get up and running with Protu, from creating your first team to seeing your firs
 
 Protu is a behavioural intelligence platform that transforms how organisations understand their people.
 
-Starting with a short conversational assessment grounded in 80+ psychological theories, Protu builds a picture of your organisation, measuring not just who people are, but:
+Starting with a short conversational assessment informed by established behavioural science and organisational psychology, Protu builds a picture of your organisation, measuring not just who people are, but:
 
 - **How they influence each other:** Who shapes decisions? Who bridges groups?
 - **Where capabilities concentrate:** What are your team's strengths? Where are you exposed?
