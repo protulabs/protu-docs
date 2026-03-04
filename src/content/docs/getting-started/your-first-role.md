@@ -3,13 +3,11 @@ title: Your First Role
 description: Create a role, invite candidates, and see your first insights.
 ---
 
-*Reading time: 5 minutes*
-
 This guide walks you through creating a role, inviting candidates, and seeing your first insights. Takes about 10 minutes.
 
 ---
 
-## Step 1: Create a Role
+## Create a Role
 
 From your dashboard, click **Create Role**.
 
@@ -21,7 +19,7 @@ From your dashboard, click **Create Role**.
 | **Description** | What the role does, key responsibilities | Helps you and your team stay aligned |
 | **Team** (optional) | Which team this role is hiring for | Enables [team fit analysis](/teams/hiring-into-teams/) |
 
-**Tip:** You can edit these later. Don't overthink it — just get started.
+**Tip:** You can edit these later. Don't overthink it. Just get started.
 
 ### Click **Create**
 
@@ -29,7 +27,7 @@ Your role is now live. You'll land on the role dashboard, ready to invite candid
 
 ---
 
-## Step 2: Invite Candidates
+## Invite Candidates
 
 From the role dashboard, click **Invite Candidates**.
 
@@ -61,7 +59,7 @@ Candidates can complete the assessment on any device. Most finish within 20 minu
 
 ---
 
-## Step 3: Wait for Completions
+## Wait for Completions
 
 As candidates complete their assessments, they'll appear in your pipeline.
 
@@ -70,6 +68,7 @@ As candidates complete their assessments, they'll appear in your pipeline.
 | Status | Meaning |
 |--------|---------|
 | **Invited** | Email sent, not started |
+| **Onboarding** | Opened the link, hasn't begun the assessment |
 | **In Progress** | Started but not finished |
 | **Completed** | Assessment done, insights available |
 
@@ -77,7 +76,7 @@ As candidates complete their assessments, they'll appear in your pipeline.
 
 ---
 
-## Step 4: Review Insights
+## Review Insights
 
 Once a candidate completes their assessment, click their name to see their profile.
 
@@ -86,20 +85,20 @@ Once a candidate completes their assessment, click their name to see their profi
 #### Behavioural Markers
 
 A visual breakdown of how this person works across key dimensions:
-- **Accountability** — Ownership and follow-through
-- **Adaptability** — Response to change
-- **Creativity** — Problem-solving approach
-- **Collaboration** — Working with others
+- **Accountability:** Ownership and follow-through
+- **Adaptability:** Response to change
+- **Creativity:** Problem-solving approach
+- **Collaboration:** Working with others
 - And more...
 
-Each marker shows where the candidate sits on a spectrum. There's no "good" or "bad" — it's about fit.
+Each marker shows where the candidate sits on a spectrum. There's no "good" or "bad": there are no right or wrong results, only what suits the role and team.
 
 #### Key Insights
 
-Plain-language observations about how this person works:
+A summary of how this person works:
 - Strengths and natural tendencies
 - Environments where they'll thrive
-- Potential considerations for the role
+- Areas that may need attention for this role
 
 #### Team Fit (if you selected a team)
 
@@ -108,11 +107,11 @@ How this candidate would affect your team:
 - Gaps they would fill
 - Dynamics they would create
 
-→ *Learn more: [Hiring Into Teams](/teams/hiring-into-teams/)*
+Learn more about [Hiring Into Teams](/teams/hiring-into-teams/).
 
 ---
 
-## Step 5: Compare Candidates
+## Compare Candidates
 
 As more candidates complete, use the comparison view to evaluate them side by side.
 
@@ -129,7 +128,7 @@ From your role dashboard:
 
 ---
 
-## Step 6: Make a Decision
+## Make a Decision
 
 When you're ready:
 
@@ -139,42 +138,3 @@ When you're ready:
 
 Protu tracks your pipeline and shows you aggregate insights about your hiring patterns over time.
 
----
-
-## What's Next?
-
-You've completed your first role workflow. Here's what to explore next:
-
-### Build Your Team Intelligence
-
-→ [Create a Team](/teams/creating-teams/) — Add your existing team members to see team dynamics
-
-### Go Deeper on Insights
-
-→ [Key Concepts](/getting-started/key-concepts/) — Understand how Protu thinks about behaviour
-
----
-
-## Common Questions
-
-### How long does the assessment take?
-
-15-20 minutes for most candidates. It's conversational and moves at their pace.
-
-### Can candidates redo the assessment?
-
-No — the assessment captures natural responses. Retakes would reduce accuracy.
-
-### What if a candidate hasn't completed?
-
-You can send a reminder from the role dashboard. Click the candidate's row and select **Send Reminder**.
-
-### Is the assessment the same for every role?
-
-Yes. Protu measures behavioural patterns, not role-specific skills. The insights are then contextualised for your specific role and team.
-
----
-
-*Need help? [Contact support](/support/contact/)*
-
-<!-- Source references: docs/help/getting-started/your-first-role.md -->

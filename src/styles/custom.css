@@ -44,7 +44,7 @@
   --sl-content-width: 48rem;
   --sl-sidebar-width: 18.125rem; /* 290px: 56px left margin + 234px content */
   --sl-sidebar-pad-x: 0;
-  --sl-content-gap-y: 0.5rem;
+  --sl-content-gap-y: 1rem;
 
   /* Nav height - match custom header */
   --sl-nav-height: 3.5rem;
@@ -187,9 +187,8 @@ p, li {
   padding-inline-start: 1.25rem;
 }
 
-/* Strong text */
+/* Strong text — inherits surrounding color so bold doesn't pop white mid-sentence */
 strong {
-  color: var(--sl-color-white);
   font-weight: 500;
 }
 
@@ -208,6 +207,15 @@ a {
 a:hover {
   color: var(--sl-color-white);
   text-decoration-color: rgba(239, 243, 244, 0.4);
+}
+
+/* Inline content links — lighter gray to distinguish from body text */
+.sl-markdown-content a {
+  color: #A8B2BE;
+}
+
+.sl-markdown-content a:hover {
+  color: var(--sl-color-white);
 }
 
 /* Sidebar and nav links - no underline */
@@ -592,6 +600,11 @@ button[data-open-modal] {
 .pagination-links {
   padding-top: 6rem;
   grid-template-columns: 1fr 1fr !important;
+}
+
+/* Single pagination link (first or last page) spans full width */
+.pagination-links a:only-child {
+  grid-column: 1 / -1;
 }
 
 .sl-container > * + * {

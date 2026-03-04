@@ -15,16 +15,15 @@ export default defineConfig({
         root: { label: 'English', lang: 'en' },
       },
       social: [],
+      tableOfContents: { maxHeadingLevel: 2 },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         {
           label: 'Getting Started',
           collapsed: false,
           items: [
-            { label: 'Getting started', link: '/getting-started/getting-started/' },
-            { label: 'Key concepts', link: '/getting-started/key-concepts/' },
+            { label: 'Overview', link: '/getting-started/getting-started/' },
             { label: 'Your first role', link: '/getting-started/your-first-role/' },
-            { label: 'Your first team', link: '/getting-started/your-first-team/' },
           ],
         },
         {
@@ -33,7 +32,7 @@ export default defineConfig({
           items: [
             { label: 'Inviting employees', link: '/employees/inviting-employees/' },
             { label: 'Employee profiles', link: '/employees/employee-profiles/' },
-            { label: 'Understanding insights', link: '/employees/understanding-insights/' },
+            { label: 'Your assessment & profile', link: '/employees/understanding-insights/' },
           ],
         },
         {
@@ -50,8 +49,6 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: 'Privacy', link: '/security/privacy/' },
-            { label: 'Passwordless access', link: '/security/passwordless-access/' },
-            { label: 'Data security', link: '/security/data-security/' },
           ],
         },
         {
@@ -59,7 +56,6 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: 'Principles', link: '/methodology/principles/' },
-            { label: 'Scoring', link: '/methodology/scoring/' },
           ],
         },
         {
