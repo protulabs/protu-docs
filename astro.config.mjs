@@ -14,7 +14,30 @@ export default defineConfig({
       locales: {
         root: { label: 'English', lang: 'en' },
       },
+      favicon: '/favicon.svg',
       social: [],
+      head: [
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image', content: 'https://docs.protu.io/og-image.png' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:width', content: '267' },
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:height', content: '400' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:card', content: 'summary' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:image', content: 'https://docs.protu.io/og-image.png' },
+        },
+      ],
       tableOfContents: { maxHeadingLevel: 2 },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
