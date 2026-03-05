@@ -844,6 +844,29 @@ pre {
   animation: fadeIn 0.3s ease-out;
 }
 
+/* Process flow containers */
+.sl-markdown-content blockquote,
+.sl-markdown-content blockquote p {
+  border-radius: 8px;
+  outline: 1px solid #1D242D;
+  outline-offset: -1px;
+  border-left: none;
+  background-color: #0E1215;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  color: #EFF3F4 !important;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+.sl-markdown-content blockquote p {
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
 /* Content images */
 .sl-markdown-content img {
   border-radius: 12px;

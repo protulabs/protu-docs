@@ -3,7 +3,9 @@ title: Your First Role
 description: Create a role, invite candidates, and see your first insights.
 ---
 
-This guide walks you through creating a role, inviting candidates, and seeing your first insights. Takes about 10 minutes.
+This guide walks you through creating a role, inviting candidates, and reviewing your first insights. The process usually takes around 10 minutes.
+
+> Create Role → Invite Candidates → Assessment → Insights → Compare → Decide
 
 ## Create a Role
 
@@ -13,11 +15,11 @@ From your dashboard, click **Create Role**.
 
 | Field | What to write | Why it matters |
 |-------|---------------|----------------|
-| **Role name** | The job title (e.g., "Senior Product Designer") | Identifies the role across Protu |
-| **Description** | What the role does, key responsibilities | Helps you and your team stay aligned |
-| **Team** (optional) | Which team this role is hiring for | Enables [team fit analysis](/teams/hiring-into-teams/) |
+| **Role name** | The job title (e.g., "Senior Product Designer") | Used across Protu to identify the role in dashboards, comparisons, and team views |
+| **Description** | What the role does, key responsibilities | Provides context for anyone reviewing candidates or comparing against team needs |
+| **Team** (optional) | Which team this role is hiring for | Unlocks [team-level intelligence](/teams/hiring-into-teams/) showing how candidates would change your team's composition and dynamics |
 
-**Tip:** You can edit these later. Don't overthink it. Just get started.
+All of these can be edited later, so don't feel you need to get them perfect first time.
 
 ### Click **Create**
 
@@ -33,11 +35,6 @@ From the role dashboard, click **Invite Candidates**.
 
 Enter a candidate's email address and click **Send Invite**.
 
-They'll receive an email with:
-- Your company branding
-- A link to complete their assessment
-- Clear expectations (15-20 minutes, conversational, no right answers)
-
 ### Option B: Bulk Invite
 
 Have multiple candidates? Click **Bulk Invite** and either:
@@ -48,20 +45,18 @@ All candidates receive the same professional invitation.
 
 ### What candidates experience
 
-1. **Email invitation** with your company branding
-2. **Short introduction** explaining what to expect
-3. **Conversational assessment** (15-20 minutes)
-4. **Completion confirmation** with next steps
+Candidates will go through a short, structured process:
+
+1. **Email invitation** with a link to their assessment
+2. **A short introduction** explaining the assessment
+3. **A conversational assessment** (15-20 minutes)
+4. **A confirmation** once they complete it
 
 Candidates can complete the assessment on any device. Most finish within 20 minutes.
 
----
+### Tracking progress
 
-## Wait for Completions
-
-As candidates complete their assessments, they'll appear in your pipeline.
-
-### Candidate Statuses
+As candidates complete their assessments, they'll appear in your role workflow.
 
 | Status | Meaning |
 |--------|---------|
@@ -78,34 +73,40 @@ As candidates complete their assessments, they'll appear in your pipeline.
 
 Once a candidate completes their assessment, click their name to see their profile.
 
-### What you'll see:
+Both the candidate and the hiring manager receive their own view of the same intelligence. The candidate sees their personal behavioural profile immediately after completing the assessment. The hiring manager sees that profile alongside team context and deeper analytical insight. This means every candidate walks away with something valuable, regardless of outcome.
 
-#### Behavioural Markers
+### Behavioural composition
 
-A visual breakdown of how this person works across key dimensions:
-- **Accountability:** Ownership and follow-through
-- **Adaptability:** Response to change
-- **Creativity:** Problem-solving approach
-- **Collaboration:** Working with others
-- And more...
+Their profile shows how impact is distributed across all 10 behavioural markers. Each marker represents a dimension of how this person works, and their impact level shows the potential contribution they may bring in that area.
 
-Each marker shows where the candidate sits on a spectrum. There's no "good" or "bad": there are no right or wrong results, only what suits the role and team.
+There are no right or wrong results. Different combinations suit different roles and teams.
 
-#### Key Insights
+### Behavioural signature
 
-A summary of how this person works:
-- Strengths and natural tendencies
-- Environments where they'll thrive
-- Areas that may need attention for this role
+A deeper view of what drives this person:
 
-#### Team Fit (if you selected a team)
+- **Leading trait:** Where their strongest potential lies across markers
+- **Influence style:** How they naturally affect those around them
+- **What drives and motivates them:** The behavioural patterns behind how they engage
+- **Potential:** Where Protu sees capacity for growth and emerging capability
 
-How this candidate would affect your team:
-- Similar or complementary to existing members
-- Gaps they would fill
-- Dynamics they would create
+This goes beyond describing what someone is like. It surfaces what they may contribute and where that contribution could develop.
 
-Learn more about [Hiring Into Teams](/teams/hiring-into-teams/).
+### Team intelligence (if a team is linked)
+
+When the role is linked to a team, Protu analyses how this candidate would change the team's behavioural structure:
+
+- How their patterns compare to existing members
+- Which gaps in the team's composition they would address
+- How the team's dynamics and influence distribution would shift
+
+This is not a compatibility score. It's a preview of what would actually change if this person joined. Learn more about [Hiring Into Teams](/teams/hiring-into-teams/).
+
+### With and without team hiring
+
+Protu's most powerful hiring capability is **team hiring**: linking a role to a team so that every candidate is evaluated not just as an individual, but in terms of how they would change the team they're joining. This is what separates Protu from traditional hiring tools. You're not just assessing a person; you're previewing the impact on your team's composition, dynamics, and influence structure.
+
+If no team is linked, you still get full behavioural intelligence for each candidate: their composition, signature, influence style, and potential. You can always add a team link later to unlock team hiring.
 
 ---
 
@@ -116,13 +117,13 @@ As more candidates complete, use the comparison view to evaluate them side by si
 From your role dashboard:
 1. Select the candidates you want to compare
 2. Click **Compare**
-3. See markers and insights side by side
+3. Review their behavioural composition, signature, and team intelligence together
 
 ### What to look for:
 
-- **Consistency:** Do your top candidates share certain traits?
+- **Patterns:** Do your top candidates share certain behavioural strengths?
 - **Diversity:** Are you considering different working styles?
-- **Team fit:** Who complements your existing team best?
+- **Team impact:** Who would most strengthen your team's composition and dynamics?
 
 ---
 
@@ -134,5 +135,10 @@ When you're ready:
 2. **Progress** candidates through your hiring stages
 3. **Hire** when you've found the right person
 
-Protu tracks your pipeline and shows you aggregate insights about your hiring patterns over time.
+### What candidates receive
 
+Every candidate keeps their behavioural profile, whether they're hired or not. This is by design. The assessment gives candidates genuine insight into how they work, and that value doesn't depend on the outcome. It's feedback they can use for their own development, future roles, and self-understanding.
+
+### Compounding intelligence
+
+Every hiring decision feeds back into Protu's intelligence. The patterns behind who you hire, how they integrate into teams, and how team dynamics shift over time all contribute to sharper, more contextual insights for future decisions across your organisation.
