@@ -135,10 +135,22 @@ When you're ready:
 2. **Progress** candidates through your hiring stages
 3. **Hire** when you've found the right person
 
+---
+
+## After the Decision
+
 ### What candidates receive
 
 Every candidate keeps their behavioural profile, whether they're hired or not. This is by design. The assessment gives candidates genuine insight into how they work, and that value doesn't depend on the outcome. It's feedback they can use for their own development, future roles, and self-understanding.
 
-### Compounding intelligence
+### From candidate to employee
 
-Every hiring decision feeds back into Protu's intelligence. The patterns behind who you hire, how they integrate into teams, and how team dynamics shift over time all contribute to sharper, more contextual insights for future decisions across your organisation.
+When a candidate is hired, their insights don't start over. Their behavioural profile carries forward and evolves into employee-level intelligence, now contextualised within their team. They can use these insights to understand how they contribute to the team, where their strengths complement others, and how to develop within the group they've joined.
+
+### Feeding team intelligence
+
+As a new team member, their behavioural profile immediately becomes part of the team's collective intelligence. Team composition updates, dynamics shift, and Protu recalculates how influence, gaps, and strengths are distributed. The hire doesn't just fill a role; it reshapes the team's behavioural structure.
+
+### Shaping your team's trajectory
+
+Over time, every hiring decision compounds. The patterns behind who joins, how they integrate, and how the team evolves all deepen Protu's understanding of your organisation. Future recommendations become sharper, scenario predictions become more reliable, and the intelligence you act on reflects the full history of decisions that shaped your team.
