@@ -1,0 +1,104 @@
+---
+/**
+ * Breadcrumbs.astro
+ * Walks the Starlight sidebar tree to find the current page,
+ * then renders a Group > Page breadcrumb trail.
+ */
+
+interface SidebarLink {
+  type: 'link';
+  label: string;
+  href: string;
+  isCurrent: boolean;
+  [key: string]: unknown;
+}
+
+interface SidebarGroup {
+  type: 'group';
+  label: string;
+  entries: SidebarEntry[];
+  [key: string]: unknown;
+}
+
+type SidebarEntry = SidebarLink | SidebarGroup;
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+function findTrail(entries: SidebarEntry[], trail: Crumb[] = []): Crumb[] | null {
+  for (const entry of entries) {
+    if (entry.type === 'link') {
+      if (entry.isCurrent) {
+        return [...trail, { label: entry.label, href: entry.href }];
+      }
+    } else if (entry.type === 'group') {
+      const result = findTrail(entry.entries, [...trail, { label: entry.label }]);
+      if (result) return result;
+    }
+  }
+  return null;
+}
+
+const sidebar = Astro.locals.starlightRoute.sidebar;
+const trail = findTrail(sidebar as SidebarEntry[]) ?? [];
+const showBreadcrumbs = trail.length >= 2;
+---
+
+{showBreadcrumbs && (
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      {trail.map((crumb, i) => (
+        <li>
+          {i > 0 && (
+            <svg class="separator" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          )}
+          {i === trail.length - 1 ? (
+            <span class="current">{crumb.label}</span>
+          ) : (
+            <span class="ancestor">{crumb.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<style>
+  .breadcrumbs {
+    margin-bottom: 0.5rem;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    font-size: 0.8125rem;
+    line-height: 1;
+  }
+
+  .ancestor {
+    color: var(--protu-text-muted);
+  }
+
+  .current {
+    color: var(--protu-text-muted);
+  }
+
+  .separator {
+    color: var(--protu-text-dim);
+    flex-shrink: 0;
+  }
+</style>

@@ -1,28 +1,214 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
+import Search from '@astrojs/starlight/components/Search.astro';
 ---
 
 <header class="header">
   <div class="header-content">
     <div class="header-left">
       <a href="/" class="site-title-link">
-        <img src="/protu-wordmark.svg" alt="protu" class="logo-wordmark" />
+        <img src="/protu-wordmark.svg" alt="protu" class="logo-wordmark logo-dark" width="72" height="20" />
+        <img src="/protu-wordmark-dark.svg" alt="protu" class="logo-wordmark logo-light" width="72" height="20" />
         <span class="divider">|</span>
         <span class="docs-label">Docs</span>
       </a>
     </div>
     <div class="header-right">
-      <a href="/support/contact/" class="nav-link">Contact us</a>
-      <a href="https://app.protu.io" class="signin-button">Sign in</a>
+      <Search />
+      <button id="copy-url" class="copy-url-button" type="button" aria-label="Copy page URL">
+        <!-- Copy icon (two overlapping rectangles) -->
+        <svg class="copy-icon icon-copy" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+        <!-- Check icon (shown after copy) -->
+        <svg class="copy-icon icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span class="copy-label">Copy page</span>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="https://app.protu.io" class="signin-button">Open app</a>
     </div>
   </div>
 </header>
 
+<script>
+  function getEffectiveTheme(): string {
+    const stored = localStorage.getItem('starlight-theme');
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function setTheme(theme: 'light' | 'dark') {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('starlight-theme', theme);
+    window.StarlightThemeProvider?.updatePickers(theme);
+  }
+
+  function toggleTheme() {
+    const current = getEffectiveTheme();
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  // Button click
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+
+  // Keyboard shortcut: T (when not in an input)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 't' || e.key === 'T') {
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      e.preventDefault();
+      toggleTheme();
+    }
+  });
+
+  // Copy URL button
+  const copyBtn = document.getElementById('copy-url');
+
+  copyBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 1500);
+    } catch {
+      // Silently fail
+    }
+  });
+
+  // TOC tracking line
+  function initTocTracker() {
+    const tocList = document.querySelector('starlight-toc > nav > ul') as HTMLElement | null;
+    if (!tocList) return;
+
+    // Collect all TOC links (including nested h3s), skip the hidden Overview entry
+    const allLinks = Array.from(tocList.querySelectorAll('a')) as HTMLElement[];
+    const visibleLinks = allLinks.slice(1);
+    if (visibleLinks.length === 0) return;
+
+    const track = document.createElement('div');
+    track.className = 'toc-track';
+    tocList.appendChild(track);
+
+    const indicator = document.createElement('div');
+    indicator.className = 'toc-indicator';
+    tocList.appendChild(indicator);
+
+    // Reliable relative position using getBoundingClientRect
+    function relativeTop(el: Element): number {
+      return el.getBoundingClientRect().top - tocList!.getBoundingClientRect().top;
+    }
+
+    // Build ordered list of heading IDs → TOC links
+    const headingIds: string[] = [];
+    visibleLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) headingIds.push(href.slice(1));
+    });
+
+    function positionIndicator(el: HTMLElement) {
+      indicator.style.opacity = '1';
+      indicator.style.top = relativeTop(el) + 'px';
+      indicator.style.height = el.getBoundingClientRect().height + 'px';
+    }
+
+    // Own scroll-based tracker — replaces Starlight's aria-current
+    // dependency so the indicator always reaches the last section.
+    function updateFromScroll() {
+      const nearBottom = window.scrollY + window.innerHeight
+        >= document.documentElement.scrollHeight - 80;
+      // Near bottom: generous threshold so last headings can activate
+      // Normal: heading must scroll into top 20% of viewport
+      const threshold = nearBottom
+        ? window.innerHeight * 0.8
+        : window.innerHeight * 0.2;
+
+      let activeIdx = 0;
+      for (let i = 0; i < headingIds.length; i++) {
+        const el = document.getElementById(headingIds[i]);
+        if (el && el.getBoundingClientRect().top < threshold) {
+          activeIdx = i;
+        }
+      }
+      positionIndicator(visibleLinks[activeIdx]);
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateFromScroll();
+          ticking = false;
+        });
+      }
+    }, { passive: true });
+
+    const onIdle = window.requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1));
+    onIdle(() => requestAnimationFrame(updateFromScroll));
+  }
+
+  initTocTracker();
+
+  // Scroll-to-top — create element on <body> directly to escape
+  // the header's backdrop-filter containing block
+  function initScrollToTop() {
+    if (document.getElementById('scroll-to-top')) return;
+
+    const btn = document.createElement('button');
+    btn.id = 'scroll-to-top';
+    btn.className = 'scroll-to-top';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Scroll to top');
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
+    document.body.appendChild(btn);
+
+    let ticking = false;
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const show = window.scrollY > window.innerHeight;
+        btn.classList.toggle('visible', show);
+        ticking = false;
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  initScrollToTop();
+</script>
+
 <style>
   .header {
-    background-color: #0B0E12;
+    background-color: var(--protu-header-bg);
     border-bottom: none;
-    padding: 0 3.5rem;
+    padding: 0 2rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -54,19 +240,24 @@ import type { Props } from '@astrojs/starlight/props';
     width: auto;
   }
 
+  /* Show correct logo variant per theme */
+  .logo-light { display: none; }
+  .logo-dark { display: block; }
+  :global([data-theme="light"]) .logo-light { display: block; }
+  :global([data-theme="light"]) .logo-dark { display: none; }
+
   .divider {
-    color: #3A4250;
+    color: var(--protu-header-divider);
     font-size: 1rem;
     font-weight: 300;
   }
 
   .docs-label {
-    color: #EFF3F4;
+    color: var(--protu-header-text);
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0;
   }
-
 
   .header-right {
     display: flex;
@@ -74,33 +265,15 @@ import type { Props } from '@astrojs/starlight/props';
     gap: 1rem; /* 16px */
   }
 
-  .nav-link {
-    color: #EFF3F4;
-    font-size: 0.875rem; /* 14px */
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    padding: 0 0.75rem;
-    border-radius: 6px;
-  }
-
-  .nav-link:hover {
-    background-color: #191E27;
-  }
-
   .signin-button {
-    background-color: #EFF3F4;
+    background-color: var(--protu-header-btn-bg);
     border: none;
     border-radius: 6px;
     padding: 0 0.75rem; /* 12px left/right */
     height: 34px;
     display: flex;
     align-items: center;
-    color: #0B0E12;
+    color: var(--protu-header-btn-text);
     font-size: 0.875rem; /* 14px */
     font-weight: 500;
     text-decoration: none;
@@ -109,8 +282,8 @@ import type { Props } from '@astrojs/starlight/props';
   }
 
   .signin-button:hover {
-    background-color: #E4EEF0;
-    color: #0B0E12;
+    background-color: var(--protu-header-btn-hover-bg);
+    color: var(--protu-header-btn-text);
   }
 
   @media (max-width: 50rem) {

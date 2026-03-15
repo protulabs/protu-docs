@@ -9,6 +9,7 @@ export default defineConfig({
       description: 'Product documentation for Protu',
       components: {
         Header: './src/components/Header.astro',
+        PageTitle: './src/components/PageTitle.astro',
       },
       defaultLocale: 'root',
       locales: {
@@ -17,6 +18,11 @@ export default defineConfig({
       favicon: '/favicon.svg',
       social: [],
       head: [
+        {
+          tag: 'script',
+          attrs: {},
+          content: `try{sessionStorage.removeItem('sl-sidebar-state')}catch{}`,
+        },
         {
           tag: 'meta',
           attrs: { property: 'og:image', content: 'https://docs.protu.io/og-image.png' },

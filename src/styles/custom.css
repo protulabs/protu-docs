@@ -36,19 +36,114 @@
   --sl-color-hairline: #181E25;
   --sl-color-hairline-light: #1F2023;
 
+  /* Protu semantic tokens — themeable */
+  --protu-text-bright: #EFF3F4;
+  --protu-text-muted: #939FAD;
+  --protu-text-dim: #6E7883;
+  --protu-link: #D5DBE1;
+  --protu-link-underline: #2A3340;
+  --protu-link-underline-alpha: rgba(147, 159, 173, 0.4);
+  --protu-link-hover-underline: #939FAD;
+  --protu-link-hover-underline-alpha: rgba(239, 243, 244, 0.4);
+  --protu-border: #1D242D;
+  --protu-card-bg: #0E1215;
+  --protu-card-border: #191E27;
+  --protu-card-border-hover: #292D37;
+  --protu-card-hover-bg: #13181C;
+  --protu-card-title: #E2EAEC;
+  --protu-surface-hover: #101317;
+  --protu-code-block-bg: #111316;
+  --protu-aside-bg: rgba(30, 34, 40, 0.4);
+  --protu-caution-border: #8B7355;
+  --protu-caution-bg: rgba(139, 115, 85, 0.08);
+  --protu-danger-border: #8B5A5A;
+  --protu-danger-bg: rgba(139, 90, 90, 0.08);
+
+  /* Header (shared with Header.astro) */
+  --protu-header-bg: #0B0E12;
+  --protu-header-divider: #3A4250;
+  --protu-header-text: #EFF3F4;
+  --protu-header-nav-hover-bg: #191E27;
+  --protu-header-btn-bg: #EFF3F4;
+  --protu-header-btn-text: #0B0E12;
+  --protu-header-btn-hover-bg: #E4EEF0;
+
   /* Typography */
   --sl-font: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --sl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Content width */
-  --sl-content-width: 48rem;
+  /* Content width — 640px */
+  --sl-content-width: 40rem;
   --sl-sidebar-width: 18.125rem; /* 290px: 56px left margin + 234px content */
   --sl-sidebar-pad-x: 0;
   --sl-content-gap-y: 1rem;
 
   /* Nav height - match custom header */
-  --sl-nav-height: 3.5rem;
+  --sl-nav-height: 3.75rem;
 }
+
+/* ==========================================================================
+   LIGHT THEME
+   Clean, high-contrast light palette — Linear/Notion reference
+   ========================================================================== */
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #dbeafe;
+  --sl-color-accent: #2563eb;
+  --sl-color-accent-high: #1d4ed8;
+
+  --sl-color-white: #111827;
+  --sl-color-gray-1: #1f2937;
+  --sl-color-gray-2: #374151;
+  --sl-color-gray-3: #6b7280;
+  --sl-color-gray-4: #d1d5db;
+  --sl-color-gray-5: #e5e7eb;
+  --sl-color-gray-6: #f3f4f6;
+  --sl-color-black: #ffffff;
+
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-accent);
+
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-black);
+  --sl-color-bg-inline-code: #f3f4f6;
+
+  --sl-color-hairline: #e5e7eb;
+  --sl-color-hairline-light: #f0f0f0;
+
+  --protu-text-bright: #111827;
+  --protu-text-muted: #4b5563;
+  --protu-text-dim: #9ca3af;
+  --protu-link: #2563eb;
+  --protu-link-underline: #bfdbfe;
+  --protu-link-underline-alpha: rgba(37, 99, 235, 0.2);
+  --protu-link-hover-underline: #2563eb;
+  --protu-link-hover-underline-alpha: rgba(37, 99, 235, 0.4);
+  --protu-border: #e5e7eb;
+  --protu-card-bg: #f9fafb;
+  --protu-card-border: #e5e7eb;
+  --protu-card-border-hover: #d1d5db;
+  --protu-card-hover-bg: #f3f4f6;
+  --protu-card-title: #111827;
+  --protu-surface-hover: #f3f4f6;
+  --protu-code-block-bg: #f8f9fa;
+  --protu-aside-bg: rgba(0, 0, 0, 0.02);
+  --protu-caution-border: #d97706;
+  --protu-caution-bg: rgba(217, 119, 6, 0.05);
+  --protu-danger-border: #dc2626;
+  --protu-danger-bg: rgba(220, 38, 38, 0.05);
+
+  --protu-header-bg: #ffffff;
+  --protu-header-divider: #d1d5db;
+  --protu-header-text: #111827;
+  --protu-header-nav-hover-bg: #f3f4f6;
+  --protu-header-btn-bg: #111827;
+  --protu-header-btn-text: #ffffff;
+  --protu-header-btn-hover-bg: #1f2937;
+}
+
+/* Light mode html background — handled by --sl-color-bg override above */
 
 /* ==========================================================================
    FONT LOADING
@@ -67,7 +162,7 @@
    ========================================================================== */
 
 html {
-  background-color: var(--sl-color-black);
+  background-color: var(--sl-color-bg);
   scroll-behavior: smooth;
 }
 
@@ -86,11 +181,11 @@ body {
    TYPOGRAPHY - Per design spec
    ========================================================================== */
 
-/* Page title: 30px, weight 500, no divider */
+/* Page title: 28px, weight 600, no divider */
 h1 {
   font-family: var(--sl-font);
-  font-size: 1.875rem; /* 30px */
-  font-weight: 500;
+  font-size: 1.75rem; /* 28px */
+  font-weight: 600;
   color: var(--sl-color-white);
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -110,11 +205,11 @@ h1 {
   padding-top: 0;
 }
 
-/* Content headings: 22px, weight 500 */
+/* Content headings: 20px, weight 600 */
 h2 {
   font-family: var(--sl-font);
   font-size: 1.25rem; /* 20px */
-  font-weight: 500;
+  font-weight: 600;
   color: var(--sl-color-white);
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -152,10 +247,12 @@ starlight-toc > nav > ul > li:first-child {
   display: none;
 }
 
+/* First visible TOC link highlighted by JS on load */
+
 h3 {
   font-family: var(--sl-font);
   font-size: 1.0625rem; /* 17px */
-  font-weight: 500;
+  font-weight: 600;
   color: var(--sl-color-white);
   line-height: 1.4;
   margin-top: 1.75rem;
@@ -164,16 +261,16 @@ h3 {
 
 h4, h5, h6 {
   font-family: var(--sl-font);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--sl-color-white);
   line-height: 1.4;
 }
 
-/* Page description: 16px, muted */
+/* Page description: 15px, muted — same as body now */
 .sl-markdown-content > p:first-of-type {
-  font-size: 1rem; /* 16px */
+  font-size: 0.9375rem; /* 15px */
   color: var(--sl-color-gray-2);
-  line-height: 1.75;
+  line-height: 1.7;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -181,8 +278,8 @@ h4, h5, h6 {
 /* Body text */
 p, li {
   color: var(--sl-color-gray-2);
-  line-height: 1.75;
-  font-size: 0.875rem; /* 14px */
+  line-height: 1.7;
+  font-size: 0.9375rem; /* 15px */
 }
 
 /* Reduce list indentation — browser default is 40px, too much */
@@ -203,27 +300,29 @@ strong {
 a {
   color: var(--sl-color-gray-2);
   text-decoration: underline;
-  text-decoration-color: rgba(147, 159, 173, 0.4);
+  text-decoration-color: var(--protu-link-underline-alpha);
+  text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   transition: color 0.15s ease;
 }
 
 a:hover {
   color: var(--sl-color-white);
-  text-decoration-color: rgba(239, 243, 244, 0.4);
+  text-decoration-color: var(--protu-link-hover-underline-alpha);
 }
 
 /* Inline content links — lighter gray to distinguish from body text */
 .sl-markdown-content a {
-  color: #D5DBE1;
+  color: var(--protu-link);
   text-decoration: underline;
-  text-decoration-color: #2A3340;
+  text-decoration-color: var(--protu-link-underline);
+  text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
 .sl-markdown-content a:hover {
   color: var(--sl-color-white);
-  text-decoration-color: #939FAD;
+  text-decoration-color: var(--protu-link-hover-underline);
 }
 
 /* Sidebar and nav links - no underline */
@@ -238,8 +337,10 @@ starlight-toc a {
    ========================================================================== */
 
 header.header {
-  background-color: var(--sl-color-black);
-  border-bottom: 1px solid var(--sl-color-hairline);
+  background-color: color-mix(in srgb, var(--sl-color-black) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--sl-color-hairline);
 }
 
 /* Remove outer Starlight header wrapper padding so custom header handles layout */
@@ -276,7 +377,7 @@ nav.sidebar,
 
 /* 56px left margin from viewport edge, 234px content area */
 .sidebar-content {
-  padding-left: 3.5rem !important;
+  padding-left: 2rem !important;
   padding-right: 0 !important;
 }
 
@@ -308,15 +409,15 @@ nav.sidebar summary {
   font-size: 0.875rem; /* 14px */
   font-weight: 500;
   letter-spacing: 0;
-  padding: 0.2em 0.5rem 0.75rem !important; /* 12px bottom */
+  padding: 0.2em 0 0.75rem !important; /* no left padding — align with logo */
 }
 
 /* Section label: muted by default, bright when section contains active page */
 nav.sidebar summary .large {
-  color: #939FAD;
+  color: var(--protu-text-muted);
 }
 nav.sidebar details:has(a[aria-current="page"]) > summary .large {
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
 }
 
 /* Force group label (with chevron) to 14px — override Starlight .large */
@@ -329,25 +430,25 @@ nav.sidebar .top-level > li + li {
   margin-top: 0.5rem !important;
 }
 
-/* Sidebar links */
+/* Sidebar links — flush left to align with logo */
 nav.sidebar a {
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
-  padding: 0.375rem 0;
+  padding: 0.375rem 0 !important;
   border-radius: 0;
   transition: color 0.15s ease;
 }
 
 /* Nested sidebar link colors */
 nav.sidebar ul ul a {
-  color: #939FAD;
+  color: var(--protu-text-muted);
 }
 nav.sidebar ul ul a:hover {
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
 }
 nav.sidebar ul ul a[aria-current="page"] {
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
 }
 
 nav.sidebar a:hover {
@@ -361,6 +462,21 @@ nav.sidebar a[data-current="true"] {
   color: var(--sl-color-white);
   background-color: transparent;
   font-weight: 400;
+  position: relative;
+}
+
+/* Accent indicator line on active sidebar link */
+nav.sidebar a[aria-current="page"]::before,
+nav.sidebar ul ul a[aria-current="page"]::before {
+  content: '';
+  position: absolute;
+  left: -0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 1rem;
+  background-color: var(--sl-color-gray-3);
+  border-radius: 1px;
 }
 
 /* Chevron indicators */
@@ -382,8 +498,9 @@ starlight-toc {
 }
 
 starlight-toc a {
-  color: #6E7883;
+  color: var(--protu-text-dim);
   font-size: 0.8125rem;
+  font-weight: 400;
   transition: color 0.15s ease;
   padding-left: 0;
   padding-block: 0.375rem !important; /* 6px top/bottom */
@@ -391,11 +508,11 @@ starlight-toc a {
 }
 
 starlight-toc a:hover {
-  color: var(--sl-color-white);
+  color: var(--protu-text-bright);
 }
 
 starlight-toc a[aria-current="true"] {
-  color: var(--sl-color-white);
+  color: var(--protu-text-bright);
   font-weight: 500;
 }
 
@@ -403,6 +520,33 @@ starlight-toc a[aria-current="true"] {
 .right-sidebar-panel::before,
 .right-sidebar-panel::after {
   display: none !important;
+}
+
+/* TOC tracking line — track + indicator */
+starlight-toc > nav > ul {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.toc-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--sl-color-hairline);
+  pointer-events: none;
+}
+
+.toc-indicator {
+  position: absolute;
+  left: 0;
+  width: 1.5px;
+  background-color: var(--protu-text-bright);
+  transition: top 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
 }
 
 /* Hide right sidebar on mobile — mobile TOC component handles small screens */
@@ -437,28 +581,26 @@ th {
   font-weight: 500;
   text-align: left;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #1D242D !important;
+  border-bottom: 1px solid var(--protu-border) !important;
   font-size: 0.875rem; /* 14px — match td */
   white-space: nowrap;
 }
 
 td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #1D242D !important;
+  border-bottom: 1px solid var(--protu-border) !important;
   color: var(--sl-color-gray-2);
 }
 
 td:first-child {
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
 }
 
 tr:last-child td {
   border-bottom: none;
 }
 
-tr:hover td {
-  background-color: #0E1215;
-}
+/* No table row hover — rows are not interactable */
 
 /* ==========================================================================
    CODE BLOCKS
@@ -474,15 +616,65 @@ code:not(pre code) {
   font-family: var(--sl-font-mono);
 }
 
-/* Code blocks */
-pre {
-  background-color: #111316 !important;
+/* Code blocks — standalone only (not inside Expressive Code) */
+pre:not(.expressive-code pre) {
+  background-color: var(--protu-code-block-bg) !important;
   border: 1px solid var(--sl-color-hairline);
   border-radius: 6px;
   padding: 1rem;
   font-size: 0.8125rem;
   line-height: 1.6;
   overflow-x: auto;
+}
+
+/* Expressive Code — match Protu tokens */
+:root .expressive-code {
+  --ec-codeBg: var(--protu-code-block-bg);
+  --ec-brdCol: var(--sl-color-hairline);
+  --ec-brdRad: 8px;
+  --ec-codeFontFam: var(--sl-font-mono);
+  --ec-codeFontSize: 0.8125rem;
+  --ec-codeLineHeight: 1.6;
+  --ec-codePadBlock: 1rem;
+  --ec-codePadInline: 1rem;
+
+  /* Frame header */
+  --ec-frm-edTabBarBg: var(--protu-card-bg);
+  --ec-frm-edActTabBg: var(--protu-code-block-bg);
+  --ec-frm-edActTabBrdCol: var(--sl-color-hairline);
+  --ec-frm-edActTabFg: var(--protu-text-bright);
+  --ec-frm-edTabFg: var(--protu-text-dim);
+  --ec-frm-edTabBarBrdCol: var(--sl-color-hairline);
+  --ec-frm-edTabBarBrdBtmCol: var(--sl-color-hairline);
+  --ec-frm-trmTitlebarBg: var(--protu-card-bg);
+  --ec-frm-trmTitlebarFg: var(--protu-text-dim);
+  --ec-frm-trmTitlebarBrdBtmCol: var(--sl-color-hairline);
+
+  /* Copy button */
+  --ec-frm-inlBtnFg: var(--protu-text-dim);
+  --ec-frm-inlBtnBg: transparent;
+  --ec-frm-inlBtnHvrFg: var(--protu-text-bright);
+  --ec-frm-inlBtnHvrBg: var(--protu-surface-hover);
+}
+
+/* Expressive Code — light theme overrides */
+:root[data-theme="light"] .expressive-code {
+  --ec-codeBg: var(--protu-code-block-bg);
+  --ec-brdCol: var(--sl-color-hairline);
+  --ec-frm-edTabBarBg: #f3f4f6;
+  --ec-frm-edActTabBg: var(--protu-code-block-bg);
+  --ec-frm-edActTabBrdCol: var(--sl-color-hairline);
+  --ec-frm-edActTabFg: var(--protu-text-bright);
+  --ec-frm-edTabFg: var(--protu-text-dim);
+  --ec-frm-edTabBarBrdCol: var(--sl-color-hairline);
+  --ec-frm-edTabBarBrdBtmCol: var(--sl-color-hairline);
+  --ec-frm-trmTitlebarBg: #f3f4f6;
+  --ec-frm-trmTitlebarFg: var(--protu-text-dim);
+  --ec-frm-trmTitlebarBrdBtmCol: var(--sl-color-hairline);
+  --ec-frm-inlBtnFg: var(--protu-text-dim);
+  --ec-frm-inlBtnBg: transparent;
+  --ec-frm-inlBtnHvrFg: var(--protu-text-bright);
+  --ec-frm-inlBtnHvrBg: var(--protu-surface-hover);
 }
 
 pre code {
@@ -502,7 +694,7 @@ aside[class*="aside"] {
   margin: 1.5rem 0;
   border: none;
   border-left: 2px solid var(--sl-color-gray-4);
-  background-color: rgba(30, 34, 40, 0.4);
+  background-color: var(--protu-aside-bg);
 }
 
 .starlight-aside__title,
@@ -516,54 +708,167 @@ aside .aside-title {
 .starlight-aside--note,
 aside.note {
   border-left-color: var(--sl-color-gray-4);
-  background-color: rgba(30, 34, 40, 0.4);
+  background-color: var(--protu-aside-bg);
 }
 
 /* Tip */
 .starlight-aside--tip,
 aside.tip {
   border-left-color: var(--sl-color-gray-4);
-  background-color: rgba(30, 34, 40, 0.4);
+  background-color: var(--protu-aside-bg);
 }
 
 /* Caution */
 .starlight-aside--caution,
 aside.caution {
-  border-left-color: #8B7355;
-  background-color: rgba(139, 115, 85, 0.08);
+  border-left-color: var(--protu-caution-border);
+  background-color: var(--protu-caution-bg);
 }
 
 /* Danger */
 .starlight-aside--danger,
 aside.danger {
-  border-left-color: #8B5A5A;
-  background-color: rgba(139, 90, 90, 0.08);
+  border-left-color: var(--protu-danger-border);
+  background-color: var(--protu-danger-bg);
 }
 
 /* ==========================================================================
-   SEARCH
+   SEARCH — Cmd+K (Pagefind)
    ========================================================================== */
 
-/* Hide search functionality */
-site-search,
-button[data-open-modal] {
+/* Search trigger button — ghost icon button, matches theme toggle + copy page */
+site-search button[data-open-modal] {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--protu-text-muted) !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+  max-width: none !important;
+}
+
+site-search button[data-open-modal]:hover {
+  background-color: var(--protu-header-nav-hover-bg) !important;
+  color: var(--protu-text-bright) !important;
+}
+
+site-search button[data-open-modal]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--sl-color-gray-3);
+}
+
+/* Hide the text label and kbd shortcut — icon only */
+site-search button[data-open-modal] > span,
+site-search button[data-open-modal] kbd {
   display: none !important;
 }
 
-/* Hide theme toggle (dark mode only) */
+/* Search modal — rounded, blurred backdrop */
+site-search dialog {
+  border-radius: 12px !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  background-color: var(--sl-color-gray-6) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
+}
+
+site-search dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Hide Starlight's built-in theme select — we use a custom toggle */
 starlight-theme-select,
 [data-theme-select],
 select[aria-label="Select theme"] {
   display: none !important;
 }
 
+/* Custom theme toggle button */
+.theme-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+  color: var(--protu-text-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background-color: var(--protu-header-nav-hover-bg);
+  color: var(--protu-text-bright);
+}
+
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--sl-color-gray-3);
+}
+
+/* Sun/moon icon switching */
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+
+:root[data-theme="light"] .icon-sun { display: none; }
+:root[data-theme="light"] .icon-moon { display: block; }
+
+/* Theme toggle tooltip removed */
+
+/* Copy page button */
+.copy-url-button {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 34px;
+  padding: 0 0.625rem;
+  border-radius: 6px;
+  border: none;
+  background-color: transparent;
+  color: var(--protu-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.copy-url-button:hover {
+  background-color: var(--protu-header-nav-hover-bg);
+  color: var(--protu-text-bright);
+}
+
+.copy-url-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--sl-color-gray-3);
+}
+
+.copy-url-button .icon-copy { display: block; }
+.copy-url-button .icon-check { display: none; }
+.copy-url-button.copied .icon-copy { display: none; }
+.copy-url-button.copied .icon-check { display: block; }
+
 /* ==========================================================================
    PAGINATION
    ========================================================================== */
 
 .pagination-links a {
-  background-color: #0B0E12 !important;
-  border: 1px solid #1D242D !important;
+  background-color: var(--sl-color-black) !important;
+  border: 1px solid var(--protu-border) !important;
   border-radius: 8px !important;
   text-decoration: none !important;
   padding: 1rem !important; /* 16px */
@@ -580,8 +885,8 @@ select[aria-label="Select theme"] {
 }
 
 .pagination-links a:hover {
-  background-color: #101317 !important;
-  border-color: #2A3340 !important;
+  background-color: var(--protu-surface-hover) !important;
+  border-color: var(--protu-link-underline) !important;
   color: var(--sl-color-gray-2) !important;
 }
 
@@ -602,7 +907,7 @@ select[aria-label="Select theme"] {
 .pagination-links .link-title {
   font-size: 0.875rem !important; /* 14px */
   font-weight: 500;
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
 }
 
 /* ==========================================================================
@@ -689,10 +994,10 @@ html:not([data-has-toc]) .sl-container {
 }
 
 .homepage-card {
-  background-color: #0E1215;
-  border: 1px solid #191E27;
-  border-left-color: #191E27 !important;
-  border-right-color: #191E27 !important;
+  background-color: var(--protu-card-bg);
+  border: 1px solid var(--protu-card-border);
+  border-left-color: var(--protu-card-border) !important;
+  border-right-color: var(--protu-card-border) !important;
   border-radius: 8px;
   padding: 1rem;
   text-decoration: none !important;
@@ -702,30 +1007,30 @@ html:not([data-has-toc]) .sl-container {
 }
 
 .homepage-card:hover {
-  border-color: #292D37;
-  border-left-color: #292D37 !important;
-  border-right-color: #292D37 !important;
-  background-color: #13181C;
+  border-color: var(--protu-card-border-hover);
+  border-left-color: var(--protu-card-border-hover) !important;
+  border-right-color: var(--protu-card-border-hover) !important;
+  background-color: var(--protu-card-hover-bg);
 }
 
 .homepage-card-icon {
   width: 24px;
   height: 24px;
-  color: #EFF3F4;
+  color: var(--protu-text-bright);
   margin-bottom: 2.5rem;
 }
 
 .homepage-card-title {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #E2EAEC;
+  color: var(--protu-card-title);
   margin-bottom: 0.25rem;
   line-height: 1.3;
 }
 
 .homepage-card-desc {
   font-size: 0.875rem;
-  color: #8A8F9E;
+  color: var(--sl-color-gray-2);
   line-height: 1.6;
 }
 
@@ -796,15 +1101,19 @@ starlight-toc {
 }
 
 /* But preserve intentional borders we want (left/right only — the * rule above only affects those) */
-pre,
+pre:not(.expressive-code pre),
+.expressive-code,
+.expressive-code *,
 code:not(pre code),
-button[data-open-modal],
+site-search,
+site-search *,
 .starlight-aside,
-aside[class*="aside"] {
+aside[class*="aside"],
+.scroll-to-top {
   border-color: revert !important;
 }
 
-pre {
+pre:not(.expressive-code pre) {
   border: 1px solid var(--sl-color-hairline) !important;
 }
 
@@ -826,35 +1135,38 @@ pre {
   font-size: 1.0625rem; /* match h3 size */
 }
 
+/* Smooth fade for anchor link icon */
+.sl-anchor-link {
+  transition: opacity 0.15s ease;
+}
+
+.sl-anchor-icon > svg {
+  color: var(--protu-text-dim);
+  transition: color 0.15s ease;
+}
+
+.sl-heading-wrapper:hover .sl-anchor-icon > svg {
+  color: var(--protu-text-muted);
+}
+
 /* ==========================================================================
    ENTRANCE ANIMATION
    Subtle fade-in for page content
    ========================================================================== */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.sl-markdown-content {
-  animation: fadeIn 0.3s ease-out;
-}
+/* No page entrance animation — causes visible flicker on navigation */
 
 /* Process flow containers */
 .sl-markdown-content blockquote,
 .sl-markdown-content blockquote p {
   border-radius: 8px;
-  outline: 1px solid #1D242D;
+  outline: 1px solid var(--protu-border);
   outline-offset: -1px;
   border-left: none;
-  background-color: #0E1215;
+  background-color: var(--protu-card-bg);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  color: #EFF3F4 !important;
+  color: var(--protu-text-bright) !important;
   font-size: 0.875rem;
   letter-spacing: 0.02em;
 }
@@ -870,7 +1182,7 @@ pre {
 /* Content images */
 .sl-markdown-content img {
   border-radius: 12px;
-  outline: 1px solid #1D242D;
+  outline: 1px solid var(--protu-border);
   outline-offset: -1px;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -900,5 +1212,54 @@ pre {
 
   .hero h1 {
     font-size: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   SCROLL-TO-TOP BUTTON
+   Created via JS on <body> to escape header backdrop-filter context
+   ========================================================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 0.5px solid var(--sl-color-hairline) !important;
+  background-color: var(--sl-color-bg);
+  color: var(--protu-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.15s ease, color 0.15s ease;
+  pointer-events: none;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--protu-surface-hover);
+  color: var(--protu-text-bright);
+  border-color: var(--protu-card-border-hover) !important;
+}
+
+.scroll-to-top:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--sl-color-gray-3);
+}
+
+@media (max-width: 50rem) {
+  .scroll-to-top {
+    display: none;
   }
 }

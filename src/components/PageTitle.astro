@@ -1,0 +1,22 @@
+---
+/**
+ * PageTitle.astro
+ * Overrides Starlight's default PageTitle to add breadcrumbs above the title.
+ */
+import Breadcrumbs from './Breadcrumbs.astro';
+
+const PAGE_TITLE_ID = '_top';
+---
+
+<Breadcrumbs />
+<h1 id={PAGE_TITLE_ID}>{Astro.locals.starlightRoute.entry.data.title}</h1>
+
+<style>
+  h1 {
+    margin-top: 0;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+</style>

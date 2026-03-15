@@ -1,60 +1,51 @@
 ---
-title: Contact Us
-description: How to get in touch with the Protu team.
+title: Contact
+description: Get in touch with the Protu team.
 ---
 
-How to get in touch with the Protu team.
+Get in touch with the Protu team.
 
 ## Support
 
-**support@protu.io**
+For technical issues, account questions, or general help, email **support@protu.io**.
 
-For technical issues, account questions, feature help, bug reports, sales enquiries, security concerns, or anything else, reach us at support@protu.io.
+To help us resolve things quickly, include:
+- Your **company name**
+- A brief **description** of the issue
+- **Steps to reproduce**, if applicable
+- **Screenshots**, if the issue is visual
 
-### What to include
-
-Help us help you faster:
-- **Your company name:** so we can find your account
-- **Description of the issue:** what's happening?
-- **What you expected:** what should have happened?
-- **Steps to reproduce:** how can we see the issue?
-- **Screenshots:** if visual, show us what you see
-
-### Response times
-
-We aim to get back to you within **one business day**. If something takes longer to resolve, we'll keep you in the loop.
+We typically respond within one business day.
 
 ---
 
-## Urgent Issues
+## Urgent issues
 
-For urgent issues affecting your hiring process:
+If something is blocking your hiring process:
 
-1. Email support@protu.io with **"URGENT"** in the subject line
-2. Include a phone number for callback if needed
-3. Describe the business impact
-
----
-
-## For Candidates and Employees
-
-If you're a candidate or employee with questions:
-
-1. **First, contact your company.** They manage your access and can usually resolve things quickly.
-2. **For privacy or data concerns,** email support@protu.io directly.
+1. Email **support@protu.io** with "Urgent" in the subject line
+2. Describe the business impact
+3. Include a phone number if you'd like a callback
 
 ---
 
-## Privacy and Data Requests
+## Candidates and employees
 
-For data access, deletion, or portability requests (GDPR Article 15), email **privacy@protu.io**.
+If you're a candidate or employee:
 
-We respond to all data requests within 30 days, as required by GDPR.
+1. **Contact your company first.** They manage your access and can usually help directly.
+2. For **privacy or data concerns**, email support@protu.io.
 
 ---
 
-## Feedback & Feature Requests
+## Privacy and data requests
 
-Email support@protu.io with "Feedback" in the subject line. Include what you'd like to see, why it would help, and any context about your use case.
+For data access, deletion, or portability requests under GDPR, email **privacy@protu.io**.
 
-We read every request and will let you know if yours makes it onto the roadmap.
+All data requests are processed within 30 days.
+
+---
+
+## Feedback
+
+We'd love to hear from you. Email **support@protu.io** with "Feedback" in the subject line — what you'd like to see, why it matters, and any relevant context.
