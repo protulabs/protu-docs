@@ -3,7 +3,11 @@ title: Team Intelligence
 description: Understanding your team's composition, dynamics, scenario planning, and bridge connections.
 ---
 
-Team Intelligence shows you how your team works together. It goes beyond who's on the team, showing how behavioural patterns combine to create dynamics, strengths, and gaps. It requires **3+ completed profiles** to activate.
+Team Intelligence shows you how your team works together. It goes beyond who's on the team, showing how behavioural patterns combine to create dynamics, strengths, and gaps.
+
+:::note
+Team Intelligence requires **3+ completed profiles** to activate. Insights deepen as more team members complete their assessments.
+:::
 
 ## The Intelligence Page
 
@@ -66,7 +70,9 @@ Click the gauge icon to see how reliable the current insights are:
 | **Moderate** | 30-59%. Use with awareness of gaps |
 | **Limited** | Below 30%. Likely an incomplete picture |
 
-The more profiles your team completes, the more accurate the insights become.
+:::tip
+The more profiles your team completes, the more accurate the insights become. Aim for 60%+ completion for reliable decision-making.
+:::
 
 ---
 
@@ -233,7 +239,9 @@ Trajectory tracks your team's direction of change over time:
 
 The system also detects **events** (when someone joins or leaves) and shows the impact on the team's trajectory. This helps you understand not just that things changed, but why.
 
-Trajectory data builds over time. New teams won't have it immediately, but you'll start seeing trends after a few weeks of stable membership.
+:::note
+Trajectory data builds over time. New teams won't have it immediately — you'll start seeing trends after a few weeks of stable membership.
+:::
 
 ---
 
@@ -304,7 +312,9 @@ Protu classifies each bridge by how broadly they connect your organisation:
 | **Strong** | Connected to 50-59% of teams |
 | **Limited** | Fewer connections; may be isolated |
 
-**Single bridge warnings.** If one person is your only connection to other teams, that's a risk. The narrative will flag this.
+:::note
+If one person is your only connection to other teams, that's a risk. The narrative will flag single bridge warnings proactively.
+:::
 
 ---
 
@@ -367,7 +377,9 @@ The intelligence is there to surface what you can't see on your own and give you
 - **Below 60% completion:** The analysis works with what it has, but gaps in completion mean gaps in the picture. The insight quality gauge shows you where you stand.
 - **Teams in transition:** If people are joining and leaving frequently, patterns may not have stabilised yet. Give it a few weeks of stable membership before drawing conclusions.
 
-Analysis deepens as more of your team completes their assessments. A team with full completion gives you a significantly richer and more reliable view than one at the threshold.
+:::tip
+A team with full completion gives you a significantly richer and more reliable view than one at the threshold.
+:::
 
 ---
 

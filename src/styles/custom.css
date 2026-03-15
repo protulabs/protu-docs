@@ -337,9 +337,7 @@ starlight-toc a {
    ========================================================================== */
 
 header.header {
-  background-color: color-mix(in srgb, var(--sl-color-black) 85%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--protu-header-bg);
   border-bottom: 0.5px solid var(--sl-color-hairline);
 }
 
@@ -534,7 +532,7 @@ starlight-toc > nav > ul {
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: var(--sl-color-hairline);
+  background-color: var(--sl-color-gray-4);
   pointer-events: none;
 }
 
@@ -689,99 +687,46 @@ pre code {
 
 .starlight-aside,
 aside[class*="aside"] {
-  border-radius: 0;
-  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  padding: 0.875rem 1.25rem;
   margin: 1.5rem 0;
-  border: none;
-  border-left: 2px solid var(--sl-color-gray-4);
-  background-color: var(--protu-aside-bg);
+  border: 1px solid var(--protu-border) !important;
+  background-color: var(--protu-card-bg);
 }
 
+/* Hide title row entirely (icon + label) — container is enough */
 .starlight-aside__title,
 aside .aside-title {
-  color: var(--sl-color-gray-2);
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-
-/* Note */
-.starlight-aside--note,
-aside.note {
-  border-left-color: var(--sl-color-gray-4);
-  background-color: var(--protu-aside-bg);
-}
-
-/* Tip */
-.starlight-aside--tip,
-aside.tip {
-  border-left-color: var(--sl-color-gray-4);
-  background-color: var(--protu-aside-bg);
-}
-
-/* Caution */
-.starlight-aside--caution,
-aside.caution {
-  border-left-color: var(--protu-caution-border);
-  background-color: var(--protu-caution-bg);
-}
-
-/* Danger */
-.starlight-aside--danger,
-aside.danger {
-  border-left-color: var(--protu-danger-border);
-  background-color: var(--protu-danger-bg);
-}
-
-/* ==========================================================================
-   SEARCH — Cmd+K (Pagefind)
-   ========================================================================== */
-
-/* Search trigger button — ghost icon button, matches theme toggle + copy page */
-site-search button[data-open-modal] {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  padding: 0 !important;
-  border-radius: 6px !important;
-  border: none !important;
-  background-color: transparent !important;
-  color: var(--protu-text-muted) !important;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-  flex-shrink: 0;
-  max-width: none !important;
-}
-
-site-search button[data-open-modal]:hover {
-  background-color: var(--protu-header-nav-hover-bg) !important;
-  color: var(--protu-text-bright) !important;
-}
-
-site-search button[data-open-modal]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--sl-color-gray-3);
-}
-
-/* Hide the text label and kbd shortcut — icon only */
-site-search button[data-open-modal] > span,
-site-search button[data-open-modal] kbd {
   display: none !important;
 }
 
-/* Search modal — rounded, blurred backdrop */
-site-search dialog {
-  border-radius: 12px !important;
-  border: 1px solid var(--sl-color-hairline) !important;
-  background-color: var(--sl-color-gray-6) !important;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
+.starlight-aside__content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-site-search dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+/* Force font size on content and strip trailing margin */
+.starlight-aside__content,
+.starlight-aside__content p,
+.starlight-aside__content li {
+  font-size: 0.8125rem !important;
+  line-height: 1.6;
+  color: var(--protu-text-dim) !important;
+}
+
+.starlight-aside__content > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.starlight-aside__content > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Hide Starlight's built-in search and theme select */
+site-search,
+site-search *,
+button[data-open-modal] {
+  display: none !important;
 }
 
 /* Hide Starlight's built-in theme select — we use a custom toggle */
@@ -1105,10 +1050,6 @@ pre:not(.expressive-code pre),
 .expressive-code,
 .expressive-code *,
 code:not(pre code),
-site-search,
-site-search *,
-.starlight-aside,
-aside[class*="aside"],
 .scroll-to-top {
   border-color: revert !important;
 }

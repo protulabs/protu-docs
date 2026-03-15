@@ -65,7 +65,9 @@ As candidates complete their assessments, they'll appear in your role workflow.
 | **In Progress** | Started but not finished |
 | **Completed** | Assessment done, insights available |
 
-**Tip:** You'll receive a notification when candidates complete. Most complete within 24-48 hours of invitation.
+:::tip
+You'll receive a notification when candidates complete. Most complete within 24-48 hours of invitation.
+:::
 
 ---
 
@@ -73,7 +75,11 @@ As candidates complete their assessments, they'll appear in your role workflow.
 
 Once a candidate completes their assessment, click their name to see their profile.
 
-Both the candidate and the hiring manager receive their own view of the same intelligence. The candidate sees their personal behavioural profile immediately after completing the assessment. The hiring manager sees that profile alongside team context and deeper analytical insight. This means every candidate walks away with something valuable, regardless of outcome.
+Both the candidate and the hiring manager see the same intelligence from their own perspective. Candidates get their personal behavioural profile immediately after completing the assessment. Hiring managers see that profile alongside team context and deeper analytical insight.
+
+:::note
+Every candidate walks away with something valuable, regardless of the hiring outcome.
+:::
 
 ### Behavioural composition
 
@@ -104,9 +110,11 @@ This is not a compatibility score. It's a preview of what would actually change 
 
 ### With and without team hiring
 
-Protu's most powerful hiring capability is **team hiring**: linking a role to a team so that every candidate is evaluated not just as an individual, but in terms of how they would change the team they're joining. This is what separates Protu from traditional hiring tools. You're not just assessing a person; you're previewing the impact on your team's composition, dynamics, and influence structure.
+:::tip[Team hiring is Protu's most powerful capability]
+Link a role to a team and every candidate is evaluated not just as an individual, but in terms of how they'd change the team they're joining. You're previewing the impact on composition, dynamics, and influence — not just assessing a person.
+:::
 
-If no team is linked, you still get full behavioural intelligence for each candidate: their composition, signature, influence style, and potential. You can always add a team link later to unlock team hiring.
+If no team is linked, you still get full behavioural intelligence for each candidate. You can always add a team link later.
 
 ---
 

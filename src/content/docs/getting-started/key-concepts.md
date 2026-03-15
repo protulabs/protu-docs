@@ -3,11 +3,21 @@ title: Key Concepts
 description: How Protu thinks about behaviour and what the key terms mean.
 ---
 
-The core concepts behind how Protu measures, analyses, and surfaces behavioural intelligence.
+Protu measures how people work, not what they know. This page explains the ideas behind the platform and the language it uses.
 
-## Markers
+## The Assessment
 
-**Markers** are Protu's 10 behavioural dimensions. Each one groups related submarkers into a capability area, giving you both a high-level picture and the granular detail underneath.
+Everything starts with a 15–20 minute conversation. No trick questions, no right answers — just natural responses that reveal how someone works.
+
+The system observes how people respond across different contexts to identify consistent behavioural patterns. Those patterns become the foundation for everything Protu surfaces: individual profiles, team insights, and hiring intelligence.
+
+Learn more about the research behind this model in [Principles](/methodology/principles/).
+
+---
+
+## 10 Behavioural Dimensions
+
+Protu measures behaviour across 10 areas — we call these **markers**. Each one captures a distinct aspect of how someone works and contributes.
 
 | Marker | What it captures |
 |--------|-----------------|
@@ -22,28 +32,22 @@ The core concepts behind how Protu measures, analyses, and surfaces behavioural 
 | **Transparency** | Open communication, honesty, and information sharing |
 | **Self-awareness** | Understanding own emotions, strengths, and limitations |
 
-There's no "good" or "bad" pattern; different roles and teams benefit from different combinations.
+There's no "good" or "bad" pattern — different roles and teams benefit from different combinations.
 
-## Submarkers
+### The detail underneath
 
-Submarkers are the 100 granular behavioural indicators beneath markers. They form the core of Protu's behavioural intelligence model. Each submarker represents a specific behavioural pattern that contributes to how someone works and interacts within a team.
+Each marker is built from granular behavioural signals called **submarkers**. There are roughly 100 across the platform. They're the operational layer that powers Protu's analysis — markers summarise, submarkers provide the signal.
 
-Markers summarise broader behavioural areas. Submarkers provide the detailed signal that powers Protu's analysis. They are the foundational signals that drive insights throughout the platform.
-
-Protu's theoretical models (drawn from behavioural and organisational research) inform how submarkers are defined, but the submarkers themselves are the operational layer used to understand behaviour and generate insights.
-
-Here are some examples across different markers:
+Here are some examples:
 
 | Submarker | Parent marker | What it captures |
 |-----------|--------------|-----------------|
 | **Foresight** | Leadership | Anticipating future needs and planning ahead |
 | **Collaboration** | Teamwork | Working effectively with others toward shared goals |
-| **Collegiality** | Teamwork | Building respectful, cooperative working relationships |
 | **Adaptability** | Open-mindedness | Adjusting approach when circumstances change |
 | **Emotional Regulation** | Self-awareness | Managing emotional responses under pressure |
 | **Initiative** | Growth Mindset | Taking action without waiting to be asked |
 | **Resilience** | Perseverance | Recovering from setbacks and maintaining focus |
-| **Social Consciousness** | Social Awareness | Reading group dynamics and responding appropriately |
 | **Integrity** | Transparency | Acting consistently with stated values |
 | **Ownership** | Accountability | Taking personal responsibility for outcomes |
 
@@ -51,11 +55,11 @@ Here are some examples across different markers:
 
 ## Impact and Influence
 
-Protu measures behaviour at two levels of detail. Impact captures what someone brings at a broad level. Influence captures how that shows up in specific patterns. Together, they provide a structured view of how someone may affect a team or organisation.
+Protu describes behaviour at two levels.
 
 ### Impact
 
-Markers measure **impact**: the potential impact someone may have within a behavioural domain. Impact levels describe where someone currently sits across each of the 10 dimensions.
+At the marker level, Protu measures someone's potential **impact** — how much they bring to a behavioural area. Impact is described in five levels:
 
 | Level | Name | What it means |
 |-------|------|---------------|
@@ -67,67 +71,55 @@ Markers measure **impact**: the potential impact someone may have within a behav
 
 ### Influence
 
-Submarkers measure **influence**: the potential influence someone may express through specific behavioural patterns. Where impact describes the broader potential contribution someone may bring, influence describes how that contribution may manifest in practice. Every person also has a dominant influence style: the way they naturally affect those around them. No style is better than another.
+At the submarker level, Protu measures potential **influence** — how someone's behaviour shows up in practice. Everyone has a dominant influence style: the way they naturally affect those around them. No style is better than another.
 
 | Style | How they influence |
 |-------|-------------------|
-| **Catalyst** | Direct, transformative, visionary; sparks change and challenges conventional thinking |
-| **Supercharge** | Energising, momentum-building; activates others and drives pace |
-| **Optimise** | Relational, connecting, harmonising; builds bridges and strengthens relationships |
-| **Enable** | Facilitating, adaptive, space-creating; helps others do their best work |
-| **Support** | Grounding, stabilising, structural; provides consistency and reliability |
+| **Catalyst** | Direct, transformative, visionary — sparks change and challenges convention |
+| **Supercharge** | Energising, momentum-building — activates others and drives pace |
+| **Optimise** | Relational, connecting, harmonising — builds bridges and strengthens relationships |
+| **Enable** | Facilitating, adaptive, space-creating — helps others do their best work |
+| **Support** | Grounding, stabilising, structural — provides consistency and reliability |
 
 ---
 
-## Behavioural Structure
+## What You See in a Profile
 
-Protu analyses teams by modelling how behavioural patterns combine and interact across members.
-
-Rather than categorising people into fixed roles, Protu examines how behavioural signals distribute across the team. This allows the platform to surface patterns such as concentration of influence, missing perspectives, or areas of strong coverage.
-
-All markers contribute to this structure. By analysing how they balance across individuals and teams, Protu identifies opportunities, gaps, and emerging strengths that may shape how the team performs. This is what powers the [Composition and Dynamics](/teams/intelligence/team-intelligence/) lenses in Team Intelligence.
-
----
-
-## Profile Insights
-
-Profiles translate behavioural data into practical signals that help teams work more effectively.
+Individual profiles translate behavioural data into practical signals.
 
 **Influences Through** highlights the submarkers where someone shows notably higher influence potential relative to others.
 
-**Engage For** identifies situations where someone's behavioural patterns may be especially valuable, helping teams recognise when to involve particular people in decisions, discussions, or problem solving.
+**Engage For** identifies situations where someone's behavioural patterns are especially valuable — helping teams recognise when to involve particular people.
 
-**Growth Opportunities** highlight areas where someone has room to develop, with context for why it matters and how to approach it.
+**Growth Opportunities** highlight areas where someone has room to develop, with context for why it matters.
 
-These insights help teams understand not only how someone scores, but how they may contribute in practice.
+These insights help teams understand not only how someone measures, but how they may contribute in practice.
 
 ---
 
 ## Team Intelligence
 
-When three or more team members complete assessments, Protu generates **Team Intelligence**: insights into how the team functions as a collective system.
+When three or more team members complete assessments, Protu generates insights into how the team functions as a collective system — we call this **Team Intelligence**.
 
-- **Composition:** The behavioural distribution across all markers within the team
-- **Dynamics:** How individual patterns interact and where influence may flow between members
-- **Gaps and Strengths:** Areas where the team may lack coverage or demonstrate strong capability
-- **Bridges:** Individuals who belong to multiple teams, connecting groups through coordination and information flow
-- **Trajectory:** The timeline of past, present, and potential, showing how your team changes over time
-- **Opportunity:** Identified gaps or areas of low magnitude that could improve your team's composition and dynamics
-- **Stretched employees:** Employees that data indicates are behaviourally stretched thin across responsibility or role
+- **Composition** — the behavioural distribution across all markers within the team
+- **Dynamics** — how individual patterns interact and where influence flows between members
+- **Gaps and Strengths** — areas where the team lacks coverage or demonstrates strong capability
+- **Bridges** — individuals on multiple teams, connecting groups through coordination and information flow
+- **Trajectory** — how your team's patterns are changing over time
+- **Opportunities** — identified gaps that could improve composition and dynamics
+- **Stretched employees** — people who may be behaviourally stretched thin across responsibilities
 
-Together, these insights help teams understand not just who they are individually, but how they operate together.
-
-See the full [Team Intelligence](/teams/intelligence/team-intelligence/) guide for details.
+See the full [Team Intelligence](/teams/intelligence/team-intelligence/) guide.
 
 ### How intelligence compounds
 
-Assessment responses produce 100 submarker signals. These are weighted and intelligently mapped into 10 markers and inform influence classification. Individual profiles then combine at the team level, where Protu analyses how patterns interact across members to generate composition, dynamics, trajectory, and scenario insights.
+Assessment responses produce ~100 submarker signals. These are weighted and mapped into 10 markers and inform influence classification. Individual profiles combine at the team level, where Protu analyses how patterns interact across members.
 
-Each layer enriches the next, and team-level patterns feed back into how individual contributions are understood. A person's profile means more in the context of their team, and a team's intelligence sharpens as more individual profiles complete.
+Each layer enriches the next. A person's profile means more in the context of their team, and a team's intelligence sharpens as more profiles complete.
 
-### Intelligence Surfaces
+### Where intelligence appears
 
-Protu's intelligence is spread across six connected views. Clicking names, teams, or insights links between them; there are no dead ends.
+Protu spreads its intelligence across six connected views. Clicking names, teams, or insights links between them — there are no dead ends.
 
 | Surface | What it shows | Who uses it |
 |---------|---------------|-------------|
@@ -135,46 +127,40 @@ Protu's intelligence is spread across six connected views. Clicking names, teams
 | **Team Intelligence** | Full composition, dynamics, scenarios, trajectory | Deep team analysis |
 | **Employee Profile** | Individual patterns, growth opportunities, related profiles | Manager view of a person |
 | **Employee Insights** | Personal profile with trait deep-dives | Employee's own self-view |
-| **Candidate Insights** | Behavioural profile and team fit for candidates of open roles | Hiring managers evaluating candidates |
+| **Candidate Insights** | Behavioural profile and team fit | Hiring managers evaluating candidates |
 | **Candidate Profile** | Personal profile with markers and submarkers | Candidate's own self-view |
+
+---
+
+## Behavioural Structure
+
+Protu analyses teams by modelling how behavioural patterns combine and interact across members. Rather than categorising people into fixed roles, it examines how signals distribute across the team.
+
+This allows the platform to surface patterns such as concentration of influence, missing perspectives, or areas of strong coverage. It's what powers the [Composition and Dynamics](/teams/intelligence/team-intelligence/) lenses.
 
 ---
 
 ## Protu's Approach
 
-Protu focuses on understanding behaviour as it naturally appears within teams and organisations.
+**Discovery, not declaration.** Protu identifies behavioural patterns through responses, not self-assigned labels.
 
-**Discovery, not declaration:** Protu identifies behavioural patterns through responses and interactions rather than asking people to assign themselves labels.
+**Comparison, not fit.** When evaluating candidates, Protu shows how someone would change a team's behavioural structure — not whether they "fit."
 
-**Comparison, not fit:** When evaluating candidates, Protu shows how someone may change the behavioural structure of a team, rather than simply judging whether they "fit."
+**Insights over scores.** Metrics are available, but the emphasis is on what they reveal and how to act on them.
 
-**Insights over scores:** Metrics are available when needed, but the emphasis is on what they reveal and how teams can act on them.
-
-**Transparency:** Every insight can be traced back to the markers and submarkers that produced it, allowing teams to explore the underlying signals behind each conclusion.
-
----
-
-## The Assessment
-
-The Protu assessment is a 15-20 minute conversational experience designed to capture behavioural tendencies rather than test knowledge.
-
-There are no right or wrong answers. The system observes how people respond across different contexts to identify consistent behavioural patterns.
-
-Responses generate scores across 100 submarkers, which are weighted and intelligently mapped into 10 markers and influence insights. This layered structure allows Protu to produce profiles detailed enough to support meaningful decisions about roles, teams, and collaboration.
-
-Learn more about the research behind this model in [Principles](/methodology/principles/).
+**Transparency.** Every insight traces back to the markers and submarkers that produced it.
 
 ---
 
 ## Language and Terminology
 
-Protu uses specific language to reflect how it thinks about behaviour. These distinctions matter because they shape how teams interpret and act on insights.
+Protu uses specific language to reflect how it thinks about behaviour. These distinctions shape how teams interpret and act on insights.
 
 | Protu uses | Not this | Why |
 |------------|----------|-----|
 | **Behavioural patterns** | Personality traits | Behaviour is observable and contextual; personality implies fixed |
 | **Behavioural assessment** | Personality test | Assessment captures patterns; tests imply pass/fail |
-| **Markers** | Traits, characteristics | Markers are structured behavioural dimensions, not labels |
+| **Markers** | Traits, characteristics | Markers are structured dimensions, not labels |
 | **Impact levels** | Scores, ratings | Levels describe potential, not ranking |
 | **Compare** | Match, fit | We show how someone would change a team, not whether they conform |
 | **Team composition** | Team structure | Composition is about behavioural mix; structure is hierarchy |
@@ -193,16 +179,16 @@ Protu uses specific language to reflect how it thinks about behaviour. These dis
 | **Confidence level** | How reliable Team Intelligence is (High/Moderate/Limited) |
 | **Employee** | A team member who has completed (or been invited to) an assessment |
 | **Engage for** | Situations where someone's behavioural patterns are especially valuable |
-| **Impact** | The potential impact someone may have within a behavioural domain (measured by markers) |
-| **Influence** | The potential influence someone may express through specific behavioural patterns (measured by submarkers) |
+| **Impact** | Potential contribution within a behavioural domain (measured by markers) |
+| **Influence** | How behaviour shows up in practice (measured by submarkers) |
 | **Influence style** | How someone naturally influences others (Catalyst, Supercharge, Optimise, Enable, Support) |
 | **Marker** | One of 10 high-level behavioural dimensions |
-| **Opportunity** | Identified gaps or areas of low magnitude in a team's composition |
+| **Opportunity** | Identified gaps in a team's composition |
 | **Role** | A hiring position you're recruiting for |
 | **Scenario** | A "what-if" simulation of adding, removing, or replacing someone |
-| **Stretched** | An employee behaviourally stretched thin across multiple teams or responsibilities |
-| **Team hiring** | Evaluating candidates in the context of the team they'd join, not just as individuals |
-| **Influences through** | Submarkers where someone shows notably higher influence potential relative to peers |
-| **Submarker** | One of 100 granular behavioural indicators within markers |
+| **Stretched** | An employee behaviourally stretched thin across multiple teams |
+| **Team hiring** | Evaluating candidates in the context of the team they'd join |
+| **Influences through** | Submarkers where someone shows notably higher influence potential |
+| **Submarker** | One of ~100 granular behavioural indicators within markers |
 | **Team Intelligence** | Insights into how a team functions as a collective system |
-| **Trajectory** | How a team's patterns are changing over time (converging, diverging, strengthening, fragmenting) |
+| **Trajectory** | How a team's patterns are changing over time |

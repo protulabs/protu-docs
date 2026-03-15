@@ -3,74 +3,77 @@ title: Overview
 description: What Protu is and how to get started.
 ---
 
-Get up and running with Protu, from creating your first team to seeing your first intelligence.
+Protu is a behavioural intelligence platform. A short conversational assessment reveals how your people work — individually, together, and over time. You get actionable insight, not raw data.
 
-## What Protu Does
+## What You'll See
 
-Protu is a behavioural intelligence platform that transforms how organisations understand their people.
+After your team completes their assessments, Protu gives you:
 
-Starting with a short conversational assessment informed by established behavioural science and organisational psychology, Protu builds a picture of your organisation, measuring not just who people are, but:
+**Individual profiles** — Each person's behavioural shape across 10 dimensions: Leadership, Accountability, Creativity, and more. See what drives how they work, not just what they know.
 
-- **How they influence each other:** Who shapes decisions? Who bridges groups?
-- **Where capabilities concentrate:** What are your team's strengths? Where are you exposed?
-- **How teams evolve over time:** Are you converging or diverging? Strengthening or fragmenting?
-- **What happens when you add or remove someone:** Preview the impact before you act
+**Team Intelligence** — How your team actually functions together. Where strengths concentrate, where gaps exist, who bridges groups, and where tension may be building.
 
-Rather than showing raw data, Protu surfaces what matters and suggests what to do about it.
+**Scenario modelling** — Preview what happens before you act. See how adding, removing, or replacing someone would change your team's composition and dynamics.
+
+**Trajectory** — Track how your team evolves over time. Are you converging or diverging? Strengthening or fragmenting?
+
+:::tip[Where to start]
+- **Hiring managers** — [Create your first role](/getting-started/your-first-role/) and invite candidates
+- **Team leads** — Create a team below, then explore [Team Intelligence](/teams/intelligence/team-intelligence/)
+- **Employees** — Complete your assessment, then see [Your Profile](/employees/understanding-insights/)
+:::
 
 ---
 
 ## How It Works
 
-**The Assessment:** A 15-20 minute conversational experience. No trick questions, no right answers, just natural responses that reveal working style.
+**Assessment:** A 15–20 minute conversational experience. No trick questions, no right answers — just natural responses that reveal working style.
 
-**The Insights:** Responses become behavioural markers across 10 dimensions (Leadership, Accountability, Creativity, and more). See [Key Concepts](/getting-started/key-concepts/) for the full list.
+**Insights:** Responses map to behavioural markers across 10 dimensions. See [Key Concepts](/getting-started/key-concepts/) for the full breakdown.
 
-**The Intelligence:** Individual profiles combine into team-level insight: how people work together, where gaps exist, what hiring would change, and how your team is trending over time. See [Team Intelligence](/teams/intelligence/team-intelligence/).
+**Intelligence:** Individual profiles combine into team-level insight — how people work together, where gaps exist, and how your team is trending.
 
 ---
 
 ## Quickstart
 
-Five steps to your first team insights. Each takes under a minute.
+Five steps to your first team insights.
 
-### Create your first team
+### 1. Create a team
 
-1. Go to **Teams** → **Create team**
-2. Name it after a real team (e.g., "Product", "Engineering")
-3. Click **Create**
+Go to **Teams** → **Create team**, name it after a real team (e.g. "Product", "Engineering"), and click **Create**.
 
-### Add your team members
+### 2. Add team members
 
-On the team page, you can add people in two ways:
+On the team page:
 
-- **Add existing employees:** Click **Add employees** to search and select people already in Protu
-- **Create new employees:** Click **Create employee** to add someone new, then invite them to complete their assessment from the employees list
+- **Add existing employees** — search and select people already in Protu
+- **Create new employees** — add someone new, then invite them from the employees list
 
-**Tip:** Complete your own assessment first. It takes 15-20 minutes and helps you understand what your team will experience.
+:::tip
+Complete your own assessment first. It takes 15–20 minutes and helps you understand what your team will experience.
+:::
+
+### 3. Link a role (optional)
+
+If you have an open role, link it to your team to enable candidate-to-team comparison:
+
+1. Open the role → click the team selector (or **Edit** → **Team**)
+2. Choose your team and save
+
+Candidates will be evaluated against your team's actual composition, not just individually. See [Your First Role](/getting-started/your-first-role/) for a full walkthrough.
+
+### 4. Wait for assessments
 
 Team Intelligence activates when **3+ members** complete their assessments.
 
-### Link a role to your team
+### 5. See your Team Intelligence
 
-If you have an open role, linking it to a team enables candidate-to-team comparison:
+Your team's Intelligence page shows:
 
-1. Open the role
-2. Click the team selector (or **Edit** → **Team**)
-3. Choose your team
-4. Save
+- **Narrative summary** — your team's dynamics, risks, and recommended actions
+- **Composition** — collective behavioural shape across all 10 markers
+- **Dynamics** — how people position relative to each other
+- **Scenarios** — "what if" simulations for team changes
 
-When candidates complete their assessment, you'll see how they'd affect your team's composition, not just their individual profile.
-
-If you're creating a new role, you can do this during setup. See [Your First Role](/getting-started/your-first-role/) for a detailed walkthrough including inviting candidates and reviewing their team fit.
-
-### See your Team Intelligence
-
-Once 3+ team members complete their assessments, your team's Intelligence page activates. You'll see:
-
-- **Narrative summary:** A prose description of your team's dynamics, risks, and recommended actions
-- **Composition lens:** Your team's collective behavioural shape across all 10 markers
-- **Dynamics lens:** How people position relative to each other (influence, working style, and relationships)
-- **Scenario palette:** "What if" simulations for adding, removing, or replacing people
-
-See the full [Team Intelligence](/teams/intelligence/team-intelligence/) guide for details.
+See the full [Team Intelligence](/teams/intelligence/team-intelligence/) guide.

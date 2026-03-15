@@ -49,7 +49,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Getting Started',
-          collapsed: false,
+          collapsed: true,
           items: [
             { label: 'Overview', link: '/getting-started/getting-started/' },
             { label: 'Key concepts', link: '/getting-started/key-concepts/' },
