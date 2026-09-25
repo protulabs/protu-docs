@@ -43,6 +43,18 @@ export default defineConfig({
           tag: 'meta',
           attrs: { name: 'twitter:image', content: 'https://docs.protu.io/og-image.png' },
         },
+        // Vercel Web Analytics + Speed Insights (cookieless). Same-origin
+        // scripts served by Vercel once each feature is enabled on the project.
+        {
+          tag: 'script',
+          attrs: {},
+          content: `window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};var s=document.createElement('script');s.defer=true;s.src='/_vercel/insights/script.js';document.head.appendChild(s);`,
+        },
+        {
+          tag: 'script',
+          attrs: {},
+          content: `window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};var s=document.createElement('script');s.defer=true;s.src='/_vercel/speed-insights/script.js';document.head.appendChild(s);`,
+        },
       ],
       tableOfContents: { maxHeadingLevel: 2 },
       customCss: ['./src/styles/custom.css'],
